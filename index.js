@@ -5,6 +5,7 @@ const { pkg } = readPkgUp.sync()
 /**
  * Checks packages are dev dependencies.
  * @argument {string[]} packageNames Package names.
+ * @private
  */
 const checkDevDependencies = packageNames => {
   packageNames.forEach(packageName => {
