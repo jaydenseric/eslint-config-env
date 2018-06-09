@@ -1,0 +1,70 @@
+{
+  "name": "eslint-config-env",
+  "description": "ESLint config optimized for authoring packages that adapts to the project environment.",
+  "license": "MIT",
+  "author": {
+    "name": "Jayden Seric",
+    "email": "me@jaydenseric.com",
+    "url": "https://jaydenseric.com"
+  },
+  "repository": "github:jaydenseric/eslint-config-env",
+  "homepage": "https://github.com/jaydenseric/eslint-config-env#readme",
+  "bugs": "https://github.com/jaydenseric/eslint-config-env/issues",
+  "keywords": [
+    "eslint",
+    "config",
+    "env",
+    "node",
+    "prettier",
+    "react"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "engines": {
+    "node": ">=6.4"
+  },
+  "peerDependencies": {
+    "eslint": "^3.0.0",
+    "eslint-plugin-import": "^2.0.0",
+    "eslint-plugin-node": "^6.0.0"
+  },
+  "optionalDependencies": {
+    "eslint-config-prettier": "^2.0.0",
+    "eslint-plugin-prettier": "^2.0.0",
+    "eslint-plugin-react": "^7.0.0"
+  },
+  "dependencies": {
+    "read-pkg-up": "^3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.1.3",
+    "prettier": "^1.13.4"
+  },
+  "scripts": {
+    "test": "npm run test:eslint && npm run test:prettier",
+    "test:eslint": "eslint .",
+    "test:prettier": "prettier '**/*.{json,md}' -l",
+    "prepublishOnly": "npm test",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{json,md}": "prettier -l"
+  },
+  "eslintConfig": {
+    "extends": [
+      "./index.js"
+    ]
+  },
+  "prettier": {
+    "proseWrap": "never",
+    "singleQuote": true,
+    "semi": false
+  }
+}
