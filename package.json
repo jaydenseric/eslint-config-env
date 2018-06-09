@@ -29,11 +29,6 @@
     "eslint-plugin-import": "^2.0.0",
     "eslint-plugin-node": "^6.0.0"
   },
-  "optionalDependencies": {
-    "eslint-config-prettier": "^2.0.0",
-    "eslint-plugin-prettier": "^2.0.0",
-    "eslint-plugin-react": "^7.0.0"
-  },
   "dependencies": {
     "read-pkg-up": "^3.0.0"
   },
