@@ -4,6 +4,7 @@
 
 [ESLint](https://eslint.org) config optimized for authoring packages that adapts to the project environment, supporting:
 
+- [Babel](https://babeljs.io)
 - [Prettier](https://prettier.io)
 - [React](https://reactjs.org)
 
@@ -13,6 +14,14 @@ To install [`eslint-config-env`](https://npm.im/eslint-config-env) and required[
 
 ```sh
 npm install eslint-config-env eslint-plugin-import eslint-plugin-node --save-dev
+```
+
+### Babel
+
+If you use [Babel](https://babeljs.io), also install [`babel-eslint`](https://npm.im/babel-eslint):
+
+```sh
+npm install babel-eslint --save-dev
 ```
 
 ### Prettier
