@@ -1,6 +1,6 @@
 # eslint-config-env changelog
 
-## Next
+## 0.1.1
 
 - Fix a crash when a package is missing `peerDependencies`, `dependencies` or `devDependencies` fields.
 
