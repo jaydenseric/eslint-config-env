@@ -1,6 +1,8 @@
 const readPkgUp = require('read-pkg-up')
 
-const { pkg } = readPkgUp.sync()
+const {
+  pkg: { name, peerDependencies = {}, dependencies = {}, devDependencies = {} }
+} = readPkgUp.sync()
 
 /**
  * Checks packages are dev dependencies.
@@ -9,8 +11,8 @@ const { pkg } = readPkgUp.sync()
  */
 const checkDevDependencies = packageNames => {
   packageNames.forEach(packageName => {
-    if (!pkg.devDependencies[packageName])
-      throw new Error(`Add ${packageName} to ${pkg.name} devDependencies.`)
+    if (!devDependencies[packageName])
+      throw new Error(`Add ${packageName} to ${name} devDependencies.`)
   })
 }
 
@@ -123,24 +125,24 @@ const config = {
   ]
 }
 
-if (pkg.devDependencies['@babel/core']) {
+if (devDependencies['@babel/core']) {
   checkDevDependencies(['babel-eslint'])
   config.parser = 'babel-eslint'
   // Undo babel-eslint defaulting to 'module'.
   config.parserOptions.sourceType = 'script'
 }
 
-if (pkg.peerDependencies.react || pkg.dependencies.react) {
+if (peerDependencies.react || dependencies.react) {
   checkDevDependencies(['eslint-plugin-react'])
   config.plugins.push('react')
   config.extends.push('plugin:react/recommended')
 }
 
-if (pkg.devDependencies.prettier) {
+if (devDependencies.prettier) {
   checkDevDependencies(['eslint-config-prettier', 'eslint-plugin-prettier'])
   config.plugins.push('prettier')
   config.extends.push('prettier')
-  if (pkg.dependencies.react) config.extends.push('prettier/react')
+  if (dependencies.react) config.extends.push('prettier/react')
   config.rules['prettier/prettier'] = 'error'
 }
 
