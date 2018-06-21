@@ -3,6 +3,10 @@
 ## Next
 
 - Updated dependencies.
+- Updated preferred JSDoc tag synonyms:
+  - `@param`
+  - `@prop`
+  - `@returns`
 
 ## 0.1.1
 

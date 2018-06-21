@@ -6,7 +6,7 @@ const {
 
 /**
  * Checks packages are dev dependencies.
- * @argument {string[]} packageNames Package names.
+ * @param {string[]} packageNames Package names.
  * @private
  */
 const checkDevDependencies = packageNames => {
@@ -57,8 +57,8 @@ const config = {
           // shortest complete words.
           // See: http://usejsdoc.org
 
-          arg: 'argument',
-          param: 'argument',
+          arg: 'param',
+          argument: 'param',
           augments: 'extends',
           const: 'constant',
           defaultvalue: 'default',
@@ -69,8 +69,8 @@ const config = {
           fires: 'emits',
           func: 'function',
           host: 'external',
-          prop: 'property',
-          returns: 'return',
+          property: 'prop',
+          return: 'returns',
           var: 'member',
           yields: 'yield'
         },
