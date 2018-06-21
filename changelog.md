@@ -1,6 +1,6 @@
 # eslint-config-env changelog
 
-## Next
+## 0.2.0
 
 - Updated dependencies.
 - Updated preferred JSDoc tag synonyms:
