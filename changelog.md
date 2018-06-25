@@ -1,5 +1,9 @@
 # eslint-config-env changelog
 
+## Next
+
+- Updated dependencies.
+
 ## 0.2.0
 
 - Updated dependencies.
