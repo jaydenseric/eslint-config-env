@@ -43,7 +43,7 @@
     "eslint-plugin-prettier": "^2.6.1",
     "husky": "^0.14.3",
     "lint-staged": "^7.2.0",
-    "prettier": "^1.13.4"
+    "prettier": "^1.13.6"
   },
   "scripts": {
     "test": "npm run test:eslint && npm run test:prettier",
