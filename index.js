@@ -145,10 +145,8 @@ if (env.react) {
 
 if (env.prettier) {
   checkDevDependencies(['eslint-config-prettier', 'eslint-plugin-prettier'])
-  config.plugins.push('prettier')
-  config.extends.push('prettier')
+  config.extends.push('plugin:prettier/recommended')
   if (env.react) config.extends.push('prettier/react')
-  config.rules['prettier/prettier'] = 'error'
 }
 
 module.exports = config
