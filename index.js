@@ -22,11 +22,17 @@ const env = {
   prettier: !!devDependencies.prettier
 }
 
-// External plugins and config referenced in the base config are
-// peerDependencies, while those that are the result of sniffing the consumer
-// package are optionalDependencies.
+// Note: Only external plugins and config referenced in the base config can be
+// package.json peerDependencies.
 
-checkDevDependencies(['eslint-plugin-import', 'eslint-plugin-node'])
+checkDevDependencies([
+  // Although the fact this config is being used implies ESLint is present, it
+  // may still be missing from dev dependencies in the case of a global
+  // installation or an editor plugin.
+  'eslint',
+  'eslint-plugin-import',
+  'eslint-plugin-node'
+])
 
 const config = {
   parserOptions: {

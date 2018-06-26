@@ -5,6 +5,7 @@
 - Updated dependencies.
 - Support [Next.js](https://nextjs.org) projects.
 - Fix React installation instructions.
+- Throw an error if the `eslint` peer dependency is not a project dev dependency.
 
 ## 0.3.0
 
