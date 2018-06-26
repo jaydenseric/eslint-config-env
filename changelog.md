@@ -3,7 +3,7 @@
 ## Next
 
 - Updated dependencies.
-- Support Next.js projects.
+- Support [Next.js](https://nextjs.org) projects.
 
 ## 0.3.0
 
