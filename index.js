@@ -140,7 +140,6 @@ if (env.babel) {
 
 if (env.react) {
   checkDevDependencies(['eslint-plugin-react'])
-  config.plugins.push('react')
   config.extends.push('plugin:react/recommended')
 }
 
