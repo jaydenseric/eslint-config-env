@@ -18,7 +18,8 @@
     "node",
     "babel",
     "prettier",
-    "react"
+    "react",
+    "next"
   ],
   "files": [
     "index.js"

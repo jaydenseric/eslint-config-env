@@ -1,5 +1,9 @@
 # eslint-config-env changelog
 
+## Next
+
+- Support Next.js projects.
+
 ## 0.3.0
 
 - Updated dependencies.

@@ -7,6 +7,7 @@
 - [Babel](https://babeljs.io)
 - [Prettier](https://prettier.io)
 - [React](https://reactjs.org)
+- [Next.js](https://nextjs.org)
 
 ## Install
 
@@ -18,7 +19,7 @@ npm install eslint-config-env eslint-plugin-import eslint-plugin-node --save-dev
 
 ### Babel
 
-If you use [Babel](https://babeljs.io), also install [`babel-eslint`](https://npm.im/babel-eslint):
+For a [Babel](https://babeljs.io) project, also install [`babel-eslint`](https://npm.im/babel-eslint):
 
 ```sh
 npm install babel-eslint --save-dev
@@ -26,7 +27,7 @@ npm install babel-eslint --save-dev
 
 ### Prettier
 
-If you use [Prettier](https://prettier.io), also install [`eslint-plugin-prettier`](https://npm.im/eslint-plugin-prettier) and [`eslint-config-prettier`](https://npm.im/eslint-config-prettier):
+For a [Prettier](https://prettier.io) project, also install [`eslint-plugin-prettier`](https://npm.im/eslint-plugin-prettier) and [`eslint-config-prettier`](https://npm.im/eslint-config-prettier):
 
 ```sh
 npm install eslint-plugin-prettier eslint-config-prettier --save-dev
@@ -34,11 +35,15 @@ npm install eslint-plugin-prettier eslint-config-prettier --save-dev
 
 ### React
 
-If you use [React](https://reactjs.org), also install [`eslint-plugin-react`](https://npm.im/eslint-plugin-react):
+For a [React](https://reactjs.org) project, also install [`eslint-plugin-react`](https://npm.im/eslint-plugin-react):
 
 ```sh
 npm install eslint-plugin-prettier eslint-config-prettier --save-dev
 ```
+
+### Next.js
+
+A [Next.js](https://nextjs.org) project does not require additional installations.
 
 ## Config
 

@@ -125,19 +125,22 @@ const config = {
   ]
 }
 
-if (devDependencies['@babel/core']) {
+// Babel project?
+if (devDependencies['@babel/core'] || dependencies['next']) {
   checkDevDependencies(['babel-eslint'])
   config.parser = 'babel-eslint'
   // Undo babel-eslint defaulting to 'module'.
   config.parserOptions.sourceType = 'script'
 }
 
+// React project?
 if (peerDependencies.react || dependencies.react) {
   checkDevDependencies(['eslint-plugin-react'])
   config.plugins.push('react')
   config.extends.push('plugin:react/recommended')
 }
 
+// Prettier project?
 if (devDependencies.prettier) {
   checkDevDependencies(['eslint-config-prettier', 'eslint-plugin-prettier'])
   config.plugins.push('prettier')
