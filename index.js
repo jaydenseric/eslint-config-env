@@ -110,16 +110,7 @@ const config = {
     'require-await': 'error',
     'no-return-await': 'error',
     'arrow-body-style': 'error',
-    'prefer-arrow-callback': 'error',
-    'object-shorthand': [
-      'error',
-      'always',
-      {
-        avoidExplicitReturnArrows: true
-      }
-    ],
     curly: ['error', 'multi'],
-    'prefer-destructuring': 'error',
     quotes: ['error', 'single'],
     'import/first': 'error',
     'import/newline-after-import': 'error',
@@ -150,6 +141,19 @@ if (env.browser) {
     checkDevDependencies(['eslint-plugin-compat'])
     config.extends.push('plugin:compat/recommended')
   }
+}
+
+// Only force modern ES syntax in a browser project if Babel is used.
+if (!env.browser || env.babel) {
+  config.rules['prefer-destructuring'] = 'error'
+  config.rules['prefer-arrow-callback'] = 'error'
+  config.rules['object-shorthand'] = [
+    'error',
+    'always',
+    {
+      avoidExplicitReturnArrows: true
+    }
+  ]
 }
 
 if (env.babel) {

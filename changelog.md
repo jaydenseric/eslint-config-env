@@ -9,6 +9,7 @@
 - New browser project setup:
   - Use [eslint-plugin-compat](https://npm.im/eslint-plugin-compat).
   - Automatically set `env.browser`.
+- Only force modern ES syntax in a browser project if Babel is used.
 
 ## 0.3.0
 
