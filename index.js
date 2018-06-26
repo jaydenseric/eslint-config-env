@@ -1,7 +1,13 @@
 const readPkgUp = require('read-pkg-up')
 
 const {
-  pkg: { name, peerDependencies = {}, dependencies = {}, devDependencies = {} }
+  pkg: {
+    name,
+    peerDependencies = {},
+    dependencies = {},
+    devDependencies = {},
+    browserslist
+  }
 } = readPkgUp.sync()
 
 /**
@@ -17,8 +23,9 @@ const checkDevDependencies = packageNames => {
 }
 
 const env = {
-  babel: !!(devDependencies['@babel/core'] || dependencies['next']),
-  react: !!(peerDependencies.react || dependencies.react),
+  browser: !!browserslist,
+  babel: !!devDependencies['@babel/core'] || !!dependencies['next'],
+  react: !!peerDependencies.react || !!dependencies.react,
   prettier: !!devDependencies.prettier
 }
 
@@ -135,6 +142,14 @@ const config = {
       }
     }
   ]
+}
+
+if (env.browser) {
+  config.env.browser = true
+  if (!env.babel) {
+    checkDevDependencies(['eslint-plugin-compat'])
+    config.extends.push('plugin:compat/recommended')
+  }
 }
 
 if (env.babel) {

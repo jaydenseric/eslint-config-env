@@ -6,6 +6,9 @@
 - Support [Next.js](https://nextjs.org) projects.
 - Fix React installation instructions.
 - Throw an error if the `eslint` peer dependency is not a project dev dependency.
+- New browser project setup:
+  - Use [eslint-plugin-compat](https://npm.im/eslint-plugin-compat).
+  - Automatically set `env.browser`.
 
 ## 0.3.0
 
