@@ -16,6 +16,12 @@ const checkDevDependencies = packageNames => {
   })
 }
 
+const env = {
+  babel: !!(devDependencies['@babel/core'] || dependencies['next']),
+  react: !!(peerDependencies.react || dependencies.react),
+  prettier: !!devDependencies.prettier
+}
+
 // External plugins and config referenced in the base config are
 // peerDependencies, while those that are the result of sniffing the consumer
 // package are optionalDependencies.
@@ -125,27 +131,24 @@ const config = {
   ]
 }
 
-// Babel project?
-if (devDependencies['@babel/core'] || dependencies['next']) {
+if (env.babel) {
   checkDevDependencies(['babel-eslint'])
   config.parser = 'babel-eslint'
   // Undo babel-eslint defaulting to 'module'.
   config.parserOptions.sourceType = 'script'
 }
 
-// React project?
-if (peerDependencies.react || dependencies.react) {
+if (env.react) {
   checkDevDependencies(['eslint-plugin-react'])
   config.plugins.push('react')
   config.extends.push('plugin:react/recommended')
 }
 
-// Prettier project?
-if (devDependencies.prettier) {
+if (env.prettier) {
   checkDevDependencies(['eslint-config-prettier', 'eslint-plugin-prettier'])
   config.plugins.push('prettier')
   config.extends.push('prettier')
-  if (dependencies.react) config.extends.push('prettier/react')
+  if (env.react) config.extends.push('prettier/react')
   config.rules['prettier/prettier'] = 'error'
 }
 
