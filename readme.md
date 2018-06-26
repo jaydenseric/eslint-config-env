@@ -38,7 +38,7 @@ npm install eslint-plugin-prettier eslint-config-prettier --save-dev
 For a [React](https://reactjs.org) project, also install [`eslint-plugin-react`](https://npm.im/eslint-plugin-react):
 
 ```sh
-npm install eslint-plugin-prettier eslint-config-prettier --save-dev
+npm install eslint-plugin-react --save-dev
 ```
 
 ### Next.js

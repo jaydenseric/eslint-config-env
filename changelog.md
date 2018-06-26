@@ -4,6 +4,7 @@
 
 - Updated dependencies.
 - Support [Next.js](https://nextjs.org) projects.
+- Fix React installation instructions.
 
 ## 0.3.0
 
