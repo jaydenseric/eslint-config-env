@@ -1,25 +1,6 @@
 const readPkgUp = require('read-pkg-up')
 const semver = require('semver')
 
-const {
-  pkg: {
-    name,
-    engines = {},
-    browserslist,
-    peerDependencies = {},
-    dependencies = {},
-    devDependencies = {}
-  }
-} = readPkgUp.sync()
-
-if (!('node' in engines))
-  throw new Error(
-    'Specify supported Node.js versions in the package.json field `engines.node`.'
-  )
-
-if (!semver.validRange(engines.node))
-  throw new Error('Invalid semver range in package.json field `engines.node`.')
-
 /**
  * Checks packages are dev dependencies.
  * @param {string[]} packageNames Package names.
@@ -40,6 +21,25 @@ const checkDevDependencies = packageNames => {
  */
 const nodeFeaturesSinceVersionSupported = availableSinceVersion =>
   !semver.intersects(engines.node, `<${availableSinceVersion}`)
+
+const {
+  pkg: {
+    name,
+    engines = {},
+    browserslist,
+    peerDependencies = {},
+    dependencies = {},
+    devDependencies = {}
+  }
+} = readPkgUp.sync()
+
+if (!('node' in engines))
+  throw new Error(
+    'Specify supported Node.js versions in the package.json field `engines.node`.'
+  )
+
+if (!semver.validRange(engines.node))
+  throw new Error('Invalid semver range in package.json field `engines.node`.')
 
 const env = {
   browser: !!browserslist,
@@ -156,6 +156,9 @@ if (env.browser) {
     config.extends.push('plugin:compat/recommended')
   }
 }
+
+// It would be nice to also prefer modern ES syntax for browser projects, when
+// available in all browsers supported in the project’s browserslist config.
 
 if (env.babel || (!env.browser && nodeFeaturesSinceVersionSupported('6.4')))
   config.rules['prefer-destructuring'] = 'error'
