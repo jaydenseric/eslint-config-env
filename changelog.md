@@ -15,6 +15,7 @@
   - Disabled the [`react/react-in-jsx-scope` rule](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/react-in-jsx-scope.md), as Next.js uses [`babel-plugin-react-require`](https://npm.im/babel-plugin-react-require).
 - Rules preferring modern syntax only apply if the syntax is supported.
 - Document and enforce the project `package.json` `engines.node` field.
+- Ensure the [`node/no-unsupported-features` rule](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-unsupported-features.md) is also off in `.mjs` files for Babel projects.
 
 ## 0.3.0
 

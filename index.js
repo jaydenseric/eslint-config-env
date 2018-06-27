@@ -62,6 +62,14 @@ checkDevDependencies([
 ])
 
 // Base config assumes a vanilla Node.js project.
+
+const mjsConfigOverride = {
+  files: ['*.mjs'],
+  parserOptions: {
+    sourceType: 'module'
+  }
+}
+
 const config = {
   parserOptions: {
     ecmaVersion: 2018
@@ -138,22 +146,7 @@ const config = {
     'import/no-useless-path-segments': 'error',
     'import/order': 'error'
   },
-  overrides: [
-    {
-      files: ['*.mjs'],
-      parserOptions: {
-        sourceType: 'module'
-      },
-      rules: {
-        'node/no-unsupported-features': [
-          'error',
-          {
-            ignores: ['modules']
-          }
-        ]
-      }
-    }
-  ]
+  overrides: [mjsConfigOverride]
 }
 
 if (env.browser) {
@@ -185,7 +178,23 @@ if (env.babel) {
 
   // Undo babel-eslint defaulting to 'module'.
   config.parserOptions.sourceType = 'script'
-}
+
+  // Assume all unsupported Node.js features used are transpiled. It would be
+  // nice if there was a way to check Babel config and only disable disable
+  // checking features known to be transpiled.
+  config.rules['node/no-unsupported-features'] = 'off'
+} else
+  mjsConfigOverride.rules = {
+    'node/no-unsupported-features': [
+      'error',
+      {
+        ignores: [
+          // The rule is not aware ESM is natively supported in .mjs files.
+          'modules'
+        ]
+      }
+    ]
+  }
 
 if (env.react) {
   checkDevDependencies(['eslint-plugin-react'])
