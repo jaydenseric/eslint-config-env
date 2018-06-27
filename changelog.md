@@ -10,6 +10,9 @@
   - Use [eslint-plugin-compat](https://npm.im/eslint-plugin-compat).
   - Automatically set `env.browser`.
 - Only force modern ES syntax in a browser project if Babel is used.
+- Next.js project improvements:
+  - `parserOptions.sourceType` is `module`, as Next.js only supports ESM in `.js` files. Once Next.js updates to `webpack` >= 4 this will be reverted and `.mjs` should be used for ESM source files instead.
+  - Disabled the [`react/react-in-jsx-scope` rule](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/react-in-jsx-scope.md), as Next.js uses [`babel-plugin-react-require`](https://npm.im/babel-plugin-react-require).
 
 ## 0.3.0
 

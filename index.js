@@ -24,9 +24,10 @@ const checkDevDependencies = packageNames => {
 
 const env = {
   browser: !!browserslist,
-  babel: !!devDependencies['@babel/core'] || !!dependencies['next'],
+  babel: !!devDependencies['@babel/core'] || !!dependencies.next,
+  prettier: !!devDependencies.prettier,
   react: !!peerDependencies.react || !!dependencies.react,
-  prettier: !!devDependencies.prettier
+  next: !!dependencies.next
 }
 
 // Note: Only external plugins and config referenced in the base config can be
@@ -172,6 +173,15 @@ if (env.prettier) {
   checkDevDependencies(['eslint-config-prettier', 'eslint-plugin-prettier'])
   config.extends.push('plugin:prettier/recommended')
   if (env.react) config.extends.push('prettier/react')
+}
+
+if (env.next) {
+  // Once Next.js updates to webpack >= 4 .mjs should be used for source files
+  // instead.
+  config.parserOptions.sourceType = 'module'
+
+  // Next.js uses https://npm.im/babel-plugin-react-require.
+  config.rules['react/react-in-jsx-scope'] = 'off'
 }
 
 module.exports = config
