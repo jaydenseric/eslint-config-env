@@ -1,6 +1,6 @@
 # eslint-config-env changelog
 
-## Next
+## 0.4.0
 
 - Updated dependencies.
 - Fixed React installation instructions.
