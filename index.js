@@ -1,14 +1,24 @@
 const readPkgUp = require('read-pkg-up')
+const semver = require('semver')
 
 const {
   pkg: {
     name,
+    engines = {},
+    browserslist,
     peerDependencies = {},
     dependencies = {},
-    devDependencies = {},
-    browserslist
+    devDependencies = {}
   }
 } = readPkgUp.sync()
+
+if (!('node' in engines))
+  throw new Error(
+    'Specify supported Node.js versions in the package.json field `engines.node`.'
+  )
+
+if (!semver.validRange(engines.node))
+  throw new Error('Invalid semver range in package.json field `engines.node`.')
 
 /**
  * Checks packages are dev dependencies.
@@ -21,6 +31,15 @@ const checkDevDependencies = packageNames => {
       throw new Error(`Add ${packageName} to ${name} devDependencies.`)
   })
 }
+
+/**
+ * Determines if Node.js features available since a given version are supported
+ * by the project.
+ * @param {number} availableSinceVersion First Node.js version the features are available in.
+ * @returns {boolean} Are the features supported.
+ */
+const nodeFeaturesSinceVersionSupported = availableSinceVersion =>
+  !semver.intersects(engines.node, `<${availableSinceVersion}`)
 
 const env = {
   browser: !!browserslist,
@@ -42,6 +61,7 @@ checkDevDependencies([
   'eslint-plugin-node'
 ])
 
+// Base config assumes a vanilla Node.js project.
 const config = {
   parserOptions: {
     ecmaVersion: 2018
@@ -144,10 +164,13 @@ if (env.browser) {
   }
 }
 
-// Only force modern ES syntax in a browser project if Babel is used.
-if (!env.browser || env.babel) {
+if (env.babel || (!env.browser && nodeFeaturesSinceVersionSupported('6.4')))
   config.rules['prefer-destructuring'] = 'error'
+
+if (env.babel || (!env.browser && nodeFeaturesSinceVersionSupported('6')))
   config.rules['prefer-arrow-callback'] = 'error'
+
+if (env.babel || (!env.browser && nodeFeaturesSinceVersionSupported('4')))
   config.rules['object-shorthand'] = [
     'error',
     'always',
@@ -155,11 +178,11 @@ if (!env.browser || env.babel) {
       avoidExplicitReturnArrows: true
     }
   ]
-}
 
 if (env.babel) {
   checkDevDependencies(['babel-eslint'])
   config.parser = 'babel-eslint'
+
   // Undo babel-eslint defaulting to 'module'.
   config.parserOptions.sourceType = 'script'
 }

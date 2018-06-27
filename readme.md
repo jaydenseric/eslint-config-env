@@ -37,6 +37,8 @@ Support for the Node.js environment is required in every project, so also instal
 npm install eslint-plugin-import eslint-plugin-node --save-dev
 ```
 
+Supported versions of Node.js **_must_** be specified in the [`package.json` `engines.node` field](https://docs.npmjs.com/files/package.json#engines).
+
 ### Browser
 
 Also install [`eslint-plugin-compat`](https://npm.im/eslint-plugin-compat):
@@ -45,7 +47,7 @@ Also install [`eslint-plugin-compat`](https://npm.im/eslint-plugin-compat):
 npm install eslint-plugin-compat --save-dev
 ```
 
-Supported browsers **_must_** be specified in a [`package.json` `browserslist` field](https://github.com/browserslist/browserslist#packagejson).
+Supported browsers **_must_** be specified in the [`package.json` `browserslist` field](https://github.com/browserslist/browserslist#packagejson).
 
 ### Babel
 

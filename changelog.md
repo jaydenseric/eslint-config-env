@@ -13,6 +13,8 @@
 - Next.js project improvements:
   - `parserOptions.sourceType` is `module`, as Next.js only supports ESM in `.js` files. Once Next.js updates to `webpack` >= 4 this will be reverted and `.mjs` should be used for ESM source files instead.
   - Disabled the [`react/react-in-jsx-scope` rule](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/react-in-jsx-scope.md), as Next.js uses [`babel-plugin-react-require`](https://npm.im/babel-plugin-react-require).
+- Rules preferring modern syntax only apply if the syntax is supported.
+- Document and enforce the project `package.json` `engines.node` field.
 
 ## 0.3.0
 
