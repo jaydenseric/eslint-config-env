@@ -1,5 +1,6 @@
 const readPkgUp = require('read-pkg-up')
 const semver = require('semver')
+const { path: projectRootPath } = require('app-root-path')
 
 /**
  * Checks packages are dev dependencies.
@@ -31,7 +32,7 @@ const {
     dependencies = {},
     devDependencies = {}
   }
-} = readPkgUp.sync()
+} = readPkgUp.sync({ cwd: projectRootPath })
 
 if (!('node' in engines))
   throw new Error(

@@ -1,5 +1,9 @@
 # eslint-config-env changelog
 
+## Next
+
+- Support repos with multiple packages. Instead of assuming the CWD is at or below the package directory, config is derived from the first `package.json` above the nested `node_modules` `eslint-config-env` is installed in.
+
 ## 0.4.0
 
 - Updated dependencies.
