@@ -186,10 +186,11 @@ if (env.babel) {
   // Assume all unsupported Node.js features used are transpiled. It would be
   // nice if there was a way to check Babel config and only disable disable
   // checking features known to be transpiled.
-  config.rules['node/no-unsupported-features'] = 'off'
+  config.rules['node/no-unsupported-features/es-builtins'] = 'off'
+  config.rules['node/no-unsupported-features/es-syntax'] = 'off'
 } else
   mjsConfigOverride.rules = {
-    'node/no-unsupported-features': [
+    'node/no-unsupported-features/es-syntax': [
       'error',
       {
         ignores: [

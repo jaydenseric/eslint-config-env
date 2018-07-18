@@ -1,5 +1,10 @@
 # eslint-config-env changelog
 
+## Next
+
+- Update `eslint-plugin-node` peer dependency from `^6.0.0` to `^7.0.0` and support the new API.
+- Update dev dependencies.
+
 ## 0.5.0
 
 - Support repos with multiple packages. Instead of assuming the CWD is at or below the package directory, config is derived from the first `package.json` above the nested `node_modules` `eslint-config-env` is installed in.
