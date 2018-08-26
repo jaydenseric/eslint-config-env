@@ -1,5 +1,9 @@
 # eslint-config-env changelog
 
+## Next
+
+- Support Node.js v6+, from v6.4+.
+
 ## 1.0.0
 
 - Update `eslint-plugin-node` peer dependency from `^6.0.0` to `^7.0.0` and support the new API.
