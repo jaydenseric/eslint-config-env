@@ -8,6 +8,7 @@
 
 ### Patch
 
+- Updated dependencies.
 - Changelog version entries now have “Major”, “Minor” and “Patch” subheadings.
 
 ## 1.0.0
