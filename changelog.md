@@ -15,11 +15,11 @@
 
 ### Major
 
-- Update `eslint-plugin-node` peer dependency from `^6.0.0` to `^7.0.0` and support the new API.
+- Updated `eslint-plugin-node` peer dependency from `^6.0.0` to `^7.0.0` and support the new API.
 
 ### Patch
 
-- Update dev dependencies.
+- Updated dev dependencies.
 
 ## 0.5.0
 
