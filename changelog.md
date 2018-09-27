@@ -1,5 +1,11 @@
 # eslint-config-env changelog
 
+## Next
+
+### Patch
+
+- Updated dev dependencies.
+
 ## 1.1.0
 
 ### Minor
