@@ -141,7 +141,6 @@ const config = {
     'no-return-await': 'error',
     'arrow-body-style': 'error',
     curly: ['error', 'multi'],
-    quotes: ['error', 'single'],
     'import/first': 'error',
     'import/newline-after-import': 'error',
     'import/no-useless-path-segments': 'error',

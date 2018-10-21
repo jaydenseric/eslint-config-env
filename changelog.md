@@ -2,6 +2,10 @@
 
 ## Next
 
+### Minor
+
+- Removed the `quotes` rule, to prevent conflicts with Prettier config different to `singleQuote: true`.
+
 ### Patch
 
 - Updated dependencies.
