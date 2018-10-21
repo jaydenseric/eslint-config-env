@@ -5,6 +5,7 @@
 ### Minor
 
 - Removed the `quotes` rule, to prevent conflicts with Prettier config different to `singleQuote: true`.
+- Added `esm` and `mjs` keywords to the package.
 
 ### Patch
 

@@ -19,7 +19,9 @@
     "babel",
     "prettier",
     "react",
-    "next"
+    "next",
+    "esm",
+    "mjs"
   ],
   "files": [
     "index.js"
