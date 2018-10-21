@@ -12,6 +12,8 @@
 - Updated dependencies.
 - Updated package scripts and config for the new [`husky`](https://npm.im/husky) version.
 - Prettier lint `.yml` files.
+- Ensure the readme Travis build status badge only tracks `master` branch.
+- Use [Badgen](https://badgen.net) instead of [shields.io](https://shields.io) for the npm version badge.
 
 ## 1.1.0
 

@@ -1,6 +1,6 @@
 # eslint-config-env
 
-[![Build status](https://travis-ci.org/jaydenseric/eslint-config-env.svg)](https://travis-ci.org/jaydenseric/eslint-config-env) [![npm version](https://img.shields.io/npm/v/eslint-config-env.svg)](https://npm.im/eslint-config-env)
+[![npm version](https://badgen.net/npm/v/eslint-config-env)](https://npm.im/eslint-config-env) [![Build status](https://travis-ci.org/jaydenseric/eslint-config-env.svg?branch=master)](https://travis-ci.org/jaydenseric/eslint-config-env)
 
 [ESLint](https://eslint.org) config optimized for authoring packages that adapts to the project environment, supporting:
 
