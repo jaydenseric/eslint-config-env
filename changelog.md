@@ -4,7 +4,7 @@
 
 ### Patch
 
-- Updated dev dependencies.
+- Updated dependencies.
 - Updated package scripts and config for the new [`husky`](https://npm.im/husky) version.
 
 ## 1.1.0
