@@ -1,5 +1,12 @@
 # eslint-config-env changelog
 
+## Next
+
+### Patch
+
+- Updated dependencies.
+- Updated [`eslint-plugin-node`](https://npm.im/eslint-plugin-node) peer dependency to `7 - 8`.
+
 ## 1.2.0
 
 ### Minor
