@@ -1,6 +1,6 @@
 # eslint-config-env changelog
 
-## Next
+## 1.2.1
 
 ### Patch
 
