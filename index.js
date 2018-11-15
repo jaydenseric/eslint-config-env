@@ -1,6 +1,6 @@
+const { path: projectRootPath } = require('app-root-path')
 const readPkgUp = require('read-pkg-up')
 const semver = require('semver')
-const { path: projectRootPath } = require('app-root-path')
 
 /**
  * Checks packages are dev dependencies.
@@ -59,6 +59,7 @@ checkDevDependencies([
   // installation or an editor plugin.
   'eslint',
   'eslint-plugin-import',
+  'eslint-plugin-import-order-alphabetical',
   'eslint-plugin-node'
 ])
 
@@ -79,7 +80,7 @@ const config = {
     es6: true,
     node: true
   },
-  plugins: ['import', 'node'],
+  plugins: ['import', 'import-order-alphabetical', 'node'],
   extends: [
     'eslint:recommended',
     'plugin:import/recommended',
@@ -144,7 +145,10 @@ const config = {
     'import/first': 'error',
     'import/newline-after-import': 'error',
     'import/no-useless-path-segments': 'error',
-    'import/order': 'error'
+    'import-order-alphabetical/order': [
+      'error',
+      { 'newlines-between': 'never' }
+    ]
   },
   overrides: [mjsConfigOverride]
 }

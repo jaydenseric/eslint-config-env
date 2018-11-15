@@ -2,6 +2,10 @@
 
 ## Next
 
+### Major
+
+- Use [`eslint-plugin-import-order-alphabetical`](https://npm.im/eslint-plugin-import-order-alphabetical), a new peer dependency.
+
 ### Patch
 
 - Updated dev dependencies.
