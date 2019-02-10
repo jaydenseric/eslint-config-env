@@ -67,10 +67,10 @@ npm install eslint-plugin-prettier eslint-config-prettier --save-dev
 
 ### React
 
-Also install [`eslint-plugin-react`](https://npm.im/eslint-plugin-react):
+Also install [`eslint-plugin-react`](https://npm.im/eslint-plugin-react) and [`eslint-plugin-react-hooks`](https://npm.im/eslint-plugin-react-hooks):
 
 ```sh
-npm install eslint-plugin-react --save-dev
+npm install eslint-plugin-react eslint-plugin-react-hooks --save-dev
 ```
 
 ### Next.js

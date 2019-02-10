@@ -2,6 +2,10 @@
 
 ## Next
 
+### Major
+
+- Use [`eslint-plugin-react-hooks`](https://npm.im/eslint-plugin-react-hooks) for React projects.
+
 ### Patch
 
 - Updated dev dependencies.
