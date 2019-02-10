@@ -207,6 +207,10 @@ if (env.babel) {
 if (env.react) {
   checkDevDependencies(['eslint-plugin-react'])
   config.extends.push('plugin:react/recommended')
+
+  // Prevents an eslint-plugin-react warning, see:
+  // https://github.com/yannickcr/eslint-plugin-react/issues/1955#issuecomment-450771510
+  config.settings = { react: { version: 'detect' } }
 }
 
 if (env.prettier) {

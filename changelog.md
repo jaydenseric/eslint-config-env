@@ -5,6 +5,7 @@
 ### Patch
 
 - Updated dev dependencies.
+- Prevent an [`eslint-plugin-react`](https://npm.im/eslint-plugin-react) warning.
 
 ## 2.0.0
 
