@@ -9,6 +9,7 @@
 ### Patch
 
 - Updated dev dependencies.
+- Added `hooks` to the package keywords.
 
 ## 3.0.0
 

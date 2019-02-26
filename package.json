@@ -19,6 +19,7 @@
     "babel",
     "prettier",
     "react",
+    "hooks",
     "next",
     "esm",
     "mjs"
