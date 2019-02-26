@@ -2,6 +2,10 @@
 
 ## Next
 
+### Major
+
+- Enabled the `react-hooks/exhaustive-deps` rule.
+
 ### Patch
 
 - Updated dev dependencies.

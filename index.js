@@ -214,6 +214,7 @@ if (env.react) {
 
   config.plugins.push('react-hooks')
   config.rules['react-hooks/rules-of-hooks'] = 'error'
+  config.rules['react-hooks/exhaustive-deps'] = 'error'
 }
 
 if (env.prettier) {
