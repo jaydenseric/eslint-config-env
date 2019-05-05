@@ -1,5 +1,11 @@
 # eslint-config-env changelog
 
+## Next
+
+### Patch
+
+- Updated dependencies and peer dependencies.
+
 ## 4.0.0
 
 ### Major
