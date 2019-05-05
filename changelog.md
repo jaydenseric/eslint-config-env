@@ -7,6 +7,11 @@
 - Updated dependencies and peer dependencies.
 - Dropped support for Node.js v6 and v7.
 
+### Patch
+
+- Reduced the size of the published `package.json` by moving dev tool config to files. This also prevents editor extensions such as Prettier and ESLint from detecting config and attempting to operate when opening package files installed in `node_modules`.
+- Ensure `.js` files are linted on commit.
+
 ## 4.0.0
 
 ### Major
