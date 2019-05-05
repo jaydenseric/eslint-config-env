@@ -1,5 +1,12 @@
 # eslint-config-env changelog
 
+## Next
+
+### Major
+
+- Updated dependencies and peer dependencies.
+- Dropped support for Node.js v6 and v7.
+
 ## 4.0.0
 
 ### Major
