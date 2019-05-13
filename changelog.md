@@ -10,6 +10,7 @@
 
 - Updated dependencies.
 - Adapted to the new [`read-pkg-up`](https://npm.im/read-pkg-up) API.
+- Removed redundant `plugins` config, as the recommended configs already handle that.
 
 ## 5.0.0
 

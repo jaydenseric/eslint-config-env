@@ -80,7 +80,7 @@ const config = {
     es6: true,
     node: true
   },
-  plugins: ['import', 'import-order-alphabetical', 'node'],
+  plugins: ['import-order-alphabetical'],
   extends: [
     'eslint:recommended',
     'plugin:import/recommended',
