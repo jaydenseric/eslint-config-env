@@ -63,18 +63,34 @@ checkDevDependencies([
   'eslint-plugin-node'
 ])
 
+/**
+ * The Node.js resolve extensions, in order of preference. Note that Node.js v12
+ * --experimental-modules mode no longer scans for .mjs; we support the earlier
+ * implementation that does and hope that a future Node.js release will restore
+ * the behavior.
+ */
+const NODE_RESOLVE_EXTENSIONS = ['.mjs', '.js', '.json', '.node']
+
 // Base config assumes a vanilla Node.js project.
-
-const mjsConfigOverride = {
-  files: ['*.mjs'],
-  parserOptions: {
-    sourceType: 'module'
-  }
-}
-
 const config = {
+  settings: {
+    node: {
+      // By default, eslint-plugin-node does‘t support .mjs as it supports the
+      // Node.js v12 --experimental-modules implementation.
+      tryExtensions: NODE_RESOLVE_EXTENSIONS
+    },
+
+    // By default, eslint-plugin-import does‘t support .mjs:
+    // https://github.com/benmosher/eslint-plugin-import/issues/1359
+    'import/extensions': NODE_RESOLVE_EXTENSIONS,
+    'import/resolver': { node: { extensions: NODE_RESOLVE_EXTENSIONS } }
+  },
   parserOptions: {
-    ecmaVersion: 2018
+    ecmaVersion: 2018,
+
+    // Undo eslint-plugin-import and babel-eslint defaulting to 'module'.
+    // eslint-plugin-node will override this to 'module' for .mjs files.
+    sourceType: 'script'
   },
   env: {
     es6: true,
@@ -83,8 +99,8 @@ const config = {
   plugins: ['import-order-alphabetical'],
   extends: [
     'eslint:recommended',
-    'plugin:import/recommended',
-    'plugin:node/recommended'
+    'plugin:node/recommended',
+    'plugin:import/recommended'
   ],
   rules: {
     'require-jsdoc': [
@@ -146,16 +162,17 @@ const config = {
     'import/first': 'error',
     'import/newline-after-import': 'error',
     'import/no-useless-path-segments': 'error',
+    'import/no-unresolved': 'off',
     'import-order-alphabetical/order': [
       'error',
       { 'newlines-between': 'never' }
     ]
-  },
-  overrides: [mjsConfigOverride]
+  }
 }
 
 if (env.browser) {
   config.env.browser = true
+
   if (!env.babel) {
     checkDevDependencies(['eslint-plugin-compat'])
     config.extends.push('plugin:compat/recommended')
@@ -175,35 +192,19 @@ if (env.babel || (!env.browser && nodeFeaturesSinceVersionSupported('4')))
   config.rules['object-shorthand'] = [
     'error',
     'always',
-    {
-      avoidExplicitReturnArrows: true
-    }
+    { avoidExplicitReturnArrows: true }
   ]
 
 if (env.babel) {
   checkDevDependencies(['babel-eslint'])
   config.parser = 'babel-eslint'
 
-  // Undo babel-eslint defaulting to 'module'.
-  config.parserOptions.sourceType = 'script'
-
   // Assume all unsupported Node.js features used are transpiled. It would be
   // nice if there was a way to check Babel config and only disable disable
   // checking features known to be transpiled.
   config.rules['node/no-unsupported-features/es-builtins'] = 'off'
   config.rules['node/no-unsupported-features/es-syntax'] = 'off'
-} else
-  mjsConfigOverride.rules = {
-    'node/no-unsupported-features/es-syntax': [
-      'error',
-      {
-        ignores: [
-          // The rule is not aware ESM is natively supported in .mjs files.
-          'modules'
-        ]
-      }
-    ]
-  }
+}
 
 if (env.react) {
   checkDevDependencies(['eslint-plugin-react', 'eslint-plugin-react-hooks'])
@@ -211,7 +212,7 @@ if (env.react) {
 
   // Prevents an eslint-plugin-react warning, see:
   // https://github.com/yannickcr/eslint-plugin-react/issues/1955#issuecomment-450771510
-  config.settings = { react: { version: 'detect' } }
+  config.settings.react = { version: 'detect' }
 
   config.plugins.push('react-hooks')
   config.rules['react-hooks/rules-of-hooks'] = 'error'
