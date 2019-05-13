@@ -92,10 +92,7 @@ const config = {
     // eslint-plugin-node will override this to 'module' for .mjs files.
     sourceType: 'script'
   },
-  env: {
-    es6: true,
-    node: true
-  },
+  env: { es6: true, node: true },
   plugins: ['import-order-alphabetical'],
   extends: [
     'eslint:recommended',
