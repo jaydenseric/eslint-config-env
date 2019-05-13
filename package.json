@@ -34,7 +34,7 @@
     "eslint": "^5.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-import-order-alphabetical": "^0.0.2",
-    "eslint-plugin-node": "7 - 9"
+    "eslint-plugin-node": "^9.0.0"
   },
   "dependencies": {
     "app-root-path": "^2.2.1",

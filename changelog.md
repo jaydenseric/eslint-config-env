@@ -5,6 +5,8 @@
 ### Major
 
 - Use the ESLint [`sort-imports`](https://eslint.org/docs/rules/sort-imports) rule to sort named imports.
+- Updated the [`eslint-plugin-node`](https://npm.im/eslint-plugin-node) peer dependency to `^9.0.0`.
+- Remove `.mjs` file config overrides that [`eslint-plugin-node`](https://npm.im/eslint-plugin-node) now handles.
 
 ### Minor
 
@@ -15,7 +17,6 @@
 - Updated dependencies.
 - Adapted to the new [`read-pkg-up`](https://npm.im/read-pkg-up) API.
 - Removed redundant `plugins` config, as the recommended configs already handle that.
-- Remove `.mjs` file config overrides that [`eslint-plugin-node`](https://npm.im/eslint-plugin-node) now handles.
 - Ensure `.js` files (when not in a Next.js project) are parsed with a `script` source type, as [`eslint-plugin-import`](https://npm.im/eslint-plugin-import) was always setting it to `module`.
 - Disable the [`import/no-unresolved`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-unresolved.md) rule, in favor of [`node/no-missing-import`](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-missing-import.md) and [`node/no-missing-require`](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-missing-require.md).
 - Support `.mjs` files and the [`import/named`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/named.md) rule (see [benmosher/eslint-plugin-import#1359](https://github.com/benmosher/eslint-plugin-import/issues/1359)).
