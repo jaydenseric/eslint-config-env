@@ -6,6 +6,10 @@
 
 - Use the ESLint [`sort-imports`](https://eslint.org/docs/rules/sort-imports) rule to sort members.
 
+### Minor
+
+- Bump the `parserOptions.ecmaVersion` config from `2018` to `2019`.
+
 ### Patch
 
 - Updated dependencies.

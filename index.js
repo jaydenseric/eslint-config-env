@@ -86,7 +86,7 @@ const config = {
     'import/resolver': { node: { extensions: NODE_RESOLVE_EXTENSIONS } }
   },
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 2019,
 
     // Undo eslint-plugin-import and babel-eslint defaulting to 'module'.
     // eslint-plugin-node will override this to 'module' for .mjs files.
