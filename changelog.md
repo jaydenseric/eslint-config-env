@@ -4,7 +4,7 @@
 
 ### Major
 
-- Use the ESLint [`sort-imports`](https://eslint.org/docs/rules/sort-imports) rule to sort members.
+- Use the ESLint [`sort-imports`](https://eslint.org/docs/rules/sort-imports) rule to sort named imports.
 
 ### Minor
 
