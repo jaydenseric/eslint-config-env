@@ -24,14 +24,14 @@ const nodeFeaturesSinceVersionSupported = availableSinceVersion =>
   !semver.intersects(engines.node, `<${availableSinceVersion}`)
 
 const {
-  pkg: {
+  package: {
     name,
     engines = {},
     browserslist,
     peerDependencies = {},
     dependencies = {},
     devDependencies = {}
-  }
+  } = {}
 } = readPkgUp.sync({ cwd: projectRootPath })
 
 if (!('node' in engines))

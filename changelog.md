@@ -1,5 +1,12 @@
 # eslint-config-env changelog
 
+## Next
+
+### Patch
+
+- Updated dependencies.
+- Adapted to the new [`read-pkg-up`](https://npm.im/read-pkg-up) API.
+
 ## 5.0.0
 
 ### Major
