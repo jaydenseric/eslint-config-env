@@ -142,6 +142,7 @@ const config = {
     'no-return-await': 'error',
     'arrow-body-style': 'error',
     curly: ['error', 'multi'],
+    'sort-imports': ['error', { ignoreDeclarationSort: true }],
     'import/first': 'error',
     'import/newline-after-import': 'error',
     'import/no-useless-path-segments': 'error',

@@ -2,6 +2,10 @@
 
 ## Next
 
+### Major
+
+- Use the ESLint [`sort-imports`](https://eslint.org/docs/rules/sort-imports) rule to sort members.
+
 ### Patch
 
 - Updated dependencies.
