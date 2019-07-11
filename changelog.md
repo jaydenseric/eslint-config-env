@@ -9,6 +9,7 @@
 ### Patch
 
 - Updated dependencies.
+- Disabled the [`require-atomic-updates`](https://eslint.org/docs/rules/require-atomic-updates) rule [due to false positives](https://github.com/eslint/eslint/issues/11899).
 
 ## 6.0.0
 
