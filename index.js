@@ -26,6 +26,7 @@ const nodeFeaturesSinceVersionSupported = availableSinceVersion =>
 const {
   package: {
     name,
+    type,
     engines = {},
     browserslist,
     peerDependencies = {},
@@ -84,13 +85,6 @@ const config = {
     // https://github.com/benmosher/eslint-plugin-import/issues/1359
     'import/extensions': NODE_RESOLVE_EXTENSIONS,
     'import/resolver': { node: { extensions: NODE_RESOLVE_EXTENSIONS } }
-  },
-  parserOptions: {
-    ecmaVersion: 2019,
-
-    // Undo eslint-plugin-import and babel-eslint defaulting to 'module'.
-    // eslint-plugin-node will override this to 'module' for .mjs files.
-    sourceType: 'script'
   },
   env: { es6: true, node: true },
   plugins: ['import-order-alphabetical'],
@@ -168,7 +162,41 @@ const config = {
       'error',
       { 'newlines-between': 'never' }
     ]
-  }
+  },
+
+  // These base options apply to all linted files, including .js and .jsx.
+  parserOptions: {
+    ecmaVersion: 2019,
+
+    // If a consumer’s package.json specifies a `type`, respect it, otherwise
+    // try to suit the project environment.
+    sourceType: type
+      ? type
+      : // Next.js projects allow ESM in non .mjs files.
+      env.next
+      ? 'module'
+      : 'script'
+  },
+
+  // Enforce file extension specific Node.js standards. eslint-plugin-node
+  // attempts to do this, but `parserOptions.sourceType` gets overridden by
+  // eslint-plugin-import and babel-eslint setting `module`. Since ESLint v6+
+  // parent configs take priority, so these overrides should be final unless
+  // overridden by the consumer’s config.
+  overrides: [
+    {
+      files: ['*.cjs'],
+      parserOptions: {
+        sourceType: 'script'
+      }
+    },
+    {
+      files: ['*.mjs'],
+      parserOptions: {
+        sourceType: 'module'
+      }
+    }
+  ]
 }
 
 if (env.browser) {
@@ -226,13 +254,8 @@ if (env.prettier) {
   if (env.react) config.extends.push('prettier/react')
 }
 
-if (env.next) {
-  // Once Next.js updates to webpack >= 4 .mjs should be used for source files
-  // instead.
-  config.parserOptions.sourceType = 'module'
-
+if (env.next)
   // Next.js uses https://npm.im/babel-plugin-react-require.
   config.rules['react/react-in-jsx-scope'] = 'off'
-}
 
 module.exports = config

@@ -5,6 +5,7 @@
 ### Major
 
 - Updated the [`eslint`](https://npm.im/eslint) peer dependency to `^6.0.0`.
+- To account for several [changes in ESLint v6](https://eslint.org/docs/6.0.0/user-guide/migrating-to-6.0.0#overrides-precedence), when `parserOptions.sourceType` is being set the `package.json` `type` field is respected and `overrides` is used to enforce file extension specific Node.js standards.
 
 ### Patch
 
