@@ -31,7 +31,7 @@
     "node": ">=8"
   },
   "peerDependencies": {
-    "eslint": "^5.0.0",
+    "eslint": "^6.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-import-order-alphabetical": "^0.0.2",
     "eslint-plugin-node": "^9.0.0"
@@ -39,18 +39,18 @@
   "dependencies": {
     "app-root-path": "^2.2.1",
     "read-pkg-up": "^6.0.0",
-    "semver": "^6.0.0"
+    "semver": "^6.2.0"
   },
   "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-prettier": "^4.2.0",
-    "eslint-plugin-import": "^2.17.2",
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-import-order-alphabetical": "^0.0.2",
-    "eslint-plugin-node": "^9.0.1",
+    "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-prettier": "^3.1.0",
-    "husky": "^2.2.0",
-    "lint-staged": "^8.1.6",
-    "prettier": "^1.17.0"
+    "husky": "^3.0.0",
+    "lint-staged": "^9.2.0",
+    "prettier": "^1.18.2"
   },
   "scripts": {
     "test": "npm run test:eslint && npm run test:prettier",

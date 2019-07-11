@@ -1,5 +1,15 @@
 # eslint-config-env changelog
 
+## Next
+
+### Major
+
+- Updated the [`eslint`](https://npm.im/eslint) peer dependency to `^6.0.0`.
+
+### Patch
+
+- Updated dependencies.
+
 ## 6.0.0
 
 ### Major
