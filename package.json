@@ -22,7 +22,10 @@
     "hooks",
     "next",
     "esm",
-    "mjs"
+    "mjs",
+    "jsdoc",
+    "md",
+    "markdown"
   ],
   "files": [
     "index.js"

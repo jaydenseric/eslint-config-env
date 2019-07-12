@@ -1,4 +1,5 @@
 const { path: projectRootPath } = require('app-root-path')
+const tagNames = require('eslint-plugin-jsdoc/dist/tagNames')
 const readPkgUp = require('read-pkg-up')
 const semver = require('semver')
 
@@ -48,7 +49,8 @@ const env = {
   babel: !!devDependencies['@babel/core'] || !!dependencies.next,
   prettier: !!devDependencies.prettier,
   react: !!peerDependencies.react || !!dependencies.react,
-  next: !!dependencies.next
+  next: !!dependencies.next,
+  jsdocMd: !!devDependencies['jsdoc-md']
 }
 
 // Note: Only external plugins and config referenced in the base config can be
@@ -73,6 +75,59 @@ checkDevDependencies([
  */
 const NODE_RESOLVE_EXTENSIONS = ['.mjs', '.js', '.json', '.node']
 
+/**
+ * A list of JSDoc tags allowed by jsdoc-md.
+ * @see [jsdoc-md docs](https://github.com/jaydenseric/jsdoc-md#tag-subset).
+ */
+const JSDOC_MD_SUPPORTED_TAGS = [
+  'kind',
+  'name',
+  'type',
+  'prop',
+  'param',
+  'returns',
+  'see',
+  'example',
+  'ignore'
+]
+
+/**
+ * Generates a `settings.jsdoc.tagNamePreference` object suitable for a project
+ * using jsdoc-md.
+ * @returns {object} Tag name preference.
+ */
+const jsdocMdTagNamePreference = () => {
+  const tagNamePreference = {}
+
+  for (let [name, aliases] of Object.entries(tagNames)) {
+    const nameVariations = [name, ...aliases]
+    const supportedVariation = nameVariations.find(name =>
+      JSDOC_MD_SUPPORTED_TAGS.includes(name)
+    )
+
+    nameVariations.forEach(name => {
+      if (!JSDOC_MD_SUPPORTED_TAGS.includes(name))
+        tagNamePreference[name] = supportedVariation
+          ? supportedVariation
+          : {
+              message: `The JSDoc @${name} tag is unsupported by jsdoc-md.`
+            }
+    })
+  }
+
+  // Filter out tags that cause false errors due to a bug:
+  // https://github.com/gajus/eslint-plugin-jsdoc/issues/332
+  const {
+    // eslint-disable-next-line no-unused-vars
+    description,
+    // eslint-disable-next-line no-unused-vars
+    implements,
+    ...safeTagNamePreference
+  } = tagNamePreference
+
+  return safeTagNamePreference
+}
+
 // Base config assumes a vanilla Node.js project.
 const config = {
   settings: {
@@ -88,11 +143,13 @@ const config = {
     'import/resolver': { node: { extensions: NODE_RESOLVE_EXTENSIONS } },
 
     jsdoc: {
-      tagNamePreference: {
-        // `@property` is too long, and is inconsistent with how `@param` is
-        // abbreviated.
-        property: 'prop'
-      }
+      tagNamePreference: env.jsdocMd
+        ? jsdocMdTagNamePreference()
+        : {
+            // `@property` is too long, and is inconsistent with how `@param` is
+            // abbreviated. Also, jsdoc-md only supports `@prop`.
+            property: 'prop'
+          }
     }
   },
   env: { es6: true, node: true },

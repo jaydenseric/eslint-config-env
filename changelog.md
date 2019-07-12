@@ -10,12 +10,14 @@
 - Replaced [deprecated JSDoc rules](https://eslint.org/blog/2018/11/jsdoc-end-of-life) with a new peer dependency, [`eslint-plugin-jsdoc`](https://github.com/gajus/eslint-plugin-jsdoc).
 - Preferred capitalization of types now matches the [`jsdoc/check-types`](https://github.com/gajus/eslint-plugin-jsdoc#check-types) rule defaults.
 - Preferred tag names now match the [`jsdoc/check-tag-names`](https://github.com/gajus/eslint-plugin-jsdoc#check-tag-names) rule defaults, with the exception of `@prop`.
+- Support [`jsdoc-md`](https://npm.im/jsdoc-md) projects by automatically restricting JSDoc tags to [the supported subset](https://github.com/jaydenseric/jsdoc-md#tag-subset).
 
 ### Patch
 
 - Updated dependencies.
 - Disabled the [`require-atomic-updates`](https://eslint.org/docs/rules/require-atomic-updates) rule [due to false positives](https://github.com/eslint/eslint/issues/11899).
 - Improved the installation instructions in the readme.
+- Updated the package `keywords` field for [`jsdoc-md`](https://npm.im/jsdoc-md).
 
 ## 6.0.0
 

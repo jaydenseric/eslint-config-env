@@ -10,6 +10,7 @@
 - [Prettier](https://prettier.io)
 - [React](https://reactjs.org)
 - [Next.js](https://nextjs.org)
+- [jsdoc-md](https://npm.im/jsdoc-md)
 
 ## Install
 
@@ -70,3 +71,7 @@ npm install eslint-plugin-react eslint-plugin-react-hooks --save-dev
 ### Next.js
 
 A [Next.js](https://nextjs.org) project does not require additional setup.
+
+### jsdoc-md
+
+A [`jsdoc-md`](https://npm.im/jsdoc-md) project does not require additional setup.
