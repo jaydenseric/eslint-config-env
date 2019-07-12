@@ -4,6 +4,7 @@
 
 ### Major
 
+- Support Node.js v8.3+, from v8+.
 - Updated the [`eslint`](https://npm.im/eslint) peer dependency to `^6.0.0`.
 - To account for several [changes in ESLint v6](https://eslint.org/docs/6.0.0/user-guide/migrating-to-6.0.0#overrides-precedence), when `parserOptions.sourceType` is being set the `package.json` `type` field is respected and `overrides` is used to enforce file extension specific Node.js standards.
 - Replaced [deprecated JSDoc rules](https://eslint.org/blog/2018/11/jsdoc-end-of-life) with a new peer dependency, [`eslint-plugin-jsdoc`](https://github.com/gajus/eslint-plugin-jsdoc).
