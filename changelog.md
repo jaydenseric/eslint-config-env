@@ -6,11 +6,15 @@
 
 - Updated the [`eslint`](https://npm.im/eslint) peer dependency to `^6.0.0`.
 - To account for several [changes in ESLint v6](https://eslint.org/docs/6.0.0/user-guide/migrating-to-6.0.0#overrides-precedence), when `parserOptions.sourceType` is being set the `package.json` `type` field is respected and `overrides` is used to enforce file extension specific Node.js standards.
+- Replaced [deprecated JSDoc rules](https://eslint.org/blog/2018/11/jsdoc-end-of-life) with a new peer dependency, [`eslint-plugin-jsdoc`](https://github.com/gajus/eslint-plugin-jsdoc).
+- Preferred capitalization of types now matches the [`jsdoc/check-types`](https://github.com/gajus/eslint-plugin-jsdoc#check-types) rule defaults.
+- Preferred tag names now match the [`jsdoc/check-tag-names`](https://github.com/gajus/eslint-plugin-jsdoc#check-tag-names) rule defaults, with the exception of `@prop`.
 
 ### Patch
 
 - Updated dependencies.
 - Disabled the [`require-atomic-updates`](https://eslint.org/docs/rules/require-atomic-updates) rule [due to false positives](https://github.com/eslint/eslint/issues/11899).
+- Improved the installation instructions in the readme.
 
 ## 6.0.0
 

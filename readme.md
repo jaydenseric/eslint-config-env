@@ -13,10 +13,10 @@
 
 ## Install
 
-To install [`eslint-config-env`](https://npm.im/eslint-config-env) from [npm](https://npmjs.com) run:
+To install [`eslint-config-env`](https://npm.im/eslint-config-env) and it’s peer dependencies from [npm](https://npmjs.com) run:
 
 ```sh
-npm install eslint-config-env --save-dev
+npm install eslint-config-env eslint-plugin-node eslint-plugin-import eslint-plugin-import-order-alphabetical eslint-plugin-jsdoc --save-dev
 ```
 
 Configure ESLint in your project:
@@ -27,17 +27,11 @@ Configure ESLint in your project:
 }
 ```
 
-Unfortunately [sharable ESLint configs can’t declare their own plugin or config dependencies](https://github.com/eslint/eslint/issues/3458), so also follow the relevant setup instructions below…
+Also follow the setup instructions that are relevant to your project below…
 
 ### Node.js
 
-Support for the Node.js environment is required in every project, so also install [`eslint-plugin-import`](https://npm.im/eslint-plugin-import) and [`eslint-plugin-node`](https://npm.im/eslint-plugin-node):
-
-```sh
-npm install eslint-plugin-import eslint-plugin-node --save-dev
-```
-
-Supported versions of Node.js **_must_** be specified in the [`package.json` `engines.node` field](https://docs.npmjs.com/files/package.json#engines).
+Every project **_must_** specify supported Node.js versions in the [`package.json` `engines.node` field](https://docs.npmjs.com/files/package.json#engines).
 
 ### Browser
 

@@ -59,9 +59,10 @@ checkDevDependencies([
   // may still be missing from dev dependencies in the case of a global
   // installation or an editor plugin.
   'eslint',
+  'eslint-plugin-node',
   'eslint-plugin-import',
   'eslint-plugin-import-order-alphabetical',
-  'eslint-plugin-node'
+  'eslint-plugin-jsdoc'
 ])
 
 /**
@@ -84,10 +85,18 @@ const config = {
     // By default, eslint-plugin-import does‘t support .mjs:
     // https://github.com/benmosher/eslint-plugin-import/issues/1359
     'import/extensions': NODE_RESOLVE_EXTENSIONS,
-    'import/resolver': { node: { extensions: NODE_RESOLVE_EXTENSIONS } }
+    'import/resolver': { node: { extensions: NODE_RESOLVE_EXTENSIONS } },
+
+    jsdoc: {
+      tagNamePreference: {
+        // `@property` is too long, and is inconsistent with how `@param` is
+        // abbreviated.
+        property: 'prop'
+      }
+    }
   },
   env: { es6: true, node: true },
-  plugins: ['import-order-alphabetical'],
+  plugins: ['import-order-alphabetical', 'jsdoc'],
   extends: [
     'eslint:recommended',
     'plugin:node/recommended',
@@ -97,71 +106,51 @@ const config = {
     // This rule has too many false positives:
     // https://github.com/eslint/eslint/issues/11899
     'require-atomic-updates': 'off',
-
-    'require-jsdoc': [
-      'error',
-      {
-        require: {
-          ArrowFunctionExpression: true,
-          ClassDeclaration: true,
-          FunctionDeclaration: true,
-          MethodDefinition: true
-        }
-      }
-    ],
-    'valid-jsdoc': [
-      'error',
-      {
-        requireReturn: false,
-        prefer: {
-          // Ensure consistent use of tag synonyms, generally preferring
-          // shortest complete words.
-          // See: http://usejsdoc.org
-
-          arg: 'param',
-          argument: 'param',
-          augments: 'extends',
-          const: 'constant',
-          defaultvalue: 'default',
-          desc: 'description',
-          exception: 'throws',
-          fileoverview: 'file',
-          overview: 'file',
-          fires: 'emits',
-          func: 'function',
-          host: 'external',
-          property: 'prop',
-          return: 'returns',
-          var: 'member',
-          yields: 'yield'
-        },
-        preferType: {
-          // Ensure consistent type capitalization.
-          // See: https://github.com/documentationjs/documentation/blob/v8.0.0/src/lint.js#L9
-
-          array: 'Array',
-          Boolean: 'boolean',
-          date: 'Date',
-          Number: 'number',
-          object: 'Object',
-          String: 'string',
-          Undefined: 'undefined'
-        }
-      }
-    ],
     'require-await': 'error',
     'no-return-await': 'error',
     'arrow-body-style': 'error',
     curly: ['error', 'multi'],
     'sort-imports': ['error', { ignoreDeclarationSort: true }],
+
     'import/first': 'error',
     'import/newline-after-import': 'error',
     'import/no-useless-path-segments': 'error',
     'import/no-unresolved': 'off',
+
+    // Hopefully this will not be necessary in the future:
+    // https://github.com/benmosher/eslint-plugin-import/issues/389
     'import-order-alphabetical/order': [
       'error',
       { 'newlines-between': 'never' }
-    ]
+    ],
+
+    'jsdoc/check-alignment': 'error',
+    'jsdoc/check-examples': [
+      'error',
+      {
+        captionRequired: true,
+
+        // To only check the caption, reject literally any example. Perhaps in
+        // the future checking examples will be doable:
+        // https://github.com/gajus/eslint-plugin-jsdoc/issues/331
+        rejectExampleCodeRegex: '[^]*'
+      }
+    ],
+    'jsdoc/check-param-names': 'error',
+    'jsdoc/check-tag-names': 'error',
+    'jsdoc/check-types': 'error',
+    'jsdoc/implements-on-classes': 'error',
+    'jsdoc/require-description': 'error',
+    'jsdoc/require-jsdoc': 'error',
+    'jsdoc/require-param': 'error',
+    'jsdoc/require-param-description': 'error',
+    'jsdoc/require-param-name': 'error',
+    'jsdoc/require-param-type': 'error',
+    'jsdoc/require-returns': 'error',
+    'jsdoc/require-returns-check': 'error',
+    'jsdoc/require-returns-description': 'error',
+    'jsdoc/require-returns-type': 'error',
+    'jsdoc/valid-types': 'error'
   },
 
   // These base options apply to all linted files, including .js and .jsx.
