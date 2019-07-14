@@ -300,8 +300,14 @@ if (env.prettier) {
   if (env.react) config.extends.push('prettier/react')
 }
 
-if (env.next)
+if (env.next) {
+  // Next.js projects allow ESM in non .mjs files.
+  config.rules['node/no-extraneous-import'] = 'error'
+  config.rules['node/no-missing-import'] = 'error'
+  config.rules['node/no-unpublished-import'] = 'error'
+
   // Next.js uses https://npm.im/babel-plugin-react-require.
   config.rules['react/react-in-jsx-scope'] = 'off'
+}
 
 module.exports = config

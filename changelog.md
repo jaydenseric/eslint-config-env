@@ -1,5 +1,11 @@
 # eslint-config-env changelog
 
+## Next
+
+### Patch
+
+- Fixed `import` linting for Next.js projects.
+
 ## 7.0.0
 
 ### Major
