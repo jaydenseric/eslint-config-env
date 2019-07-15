@@ -1,5 +1,12 @@
 # eslint-config-env changelog
 
+## Next
+
+### Major
+
+- Updated the [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) peer dependency to `^15.5.1`.
+- Removed a no longer necessary workaround for [gajus/eslint-plugin-jsdoc#332](https://github.com/gajus/eslint-plugin-jsdoc/issues/332).
+
 ## 7.0.1
 
 ### Patch

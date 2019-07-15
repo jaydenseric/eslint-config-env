@@ -115,17 +115,7 @@ const jsdocMdTagNamePreference = () => {
     })
   }
 
-  // Filter out tags that cause false errors due to a bug:
-  // https://github.com/gajus/eslint-plugin-jsdoc/issues/332
-  const {
-    // eslint-disable-next-line no-unused-vars
-    description,
-    // eslint-disable-next-line no-unused-vars
-    implements,
-    ...safeTagNamePreference
-  } = tagNamePreference
-
-  return safeTagNamePreference
+  return tagNamePreference
 }
 
 // Base config assumes a vanilla Node.js project.
