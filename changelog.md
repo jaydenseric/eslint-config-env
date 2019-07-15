@@ -6,6 +6,7 @@
 
 - Updated the [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) peer dependency to `^15.5.1`.
 - Removed a no longer necessary workaround for [gajus/eslint-plugin-jsdoc#332](https://github.com/gajus/eslint-plugin-jsdoc/issues/332).
+- Added the [`jsdoc/newline-after-description`](https://github.com/gajus/eslint-plugin-jsdoc#eslint-plugin-jsdoc-rules-newline-after-description) rule, now that [gajus/eslint-plugin-jsdoc#328](https://github.com/gajus/eslint-plugin-jsdoc/issues/328) is fixed.
 
 ## 7.0.1
 

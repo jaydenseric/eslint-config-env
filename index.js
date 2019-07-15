@@ -187,6 +187,7 @@ const config = {
     'jsdoc/check-tag-names': 'error',
     'jsdoc/check-types': 'error',
     'jsdoc/implements-on-classes': 'error',
+    'jsdoc/newline-after-description': ['error', 'never'],
     'jsdoc/require-description': 'error',
     'jsdoc/require-jsdoc': 'error',
     'jsdoc/require-param': 'error',
