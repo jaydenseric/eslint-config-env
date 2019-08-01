@@ -2,6 +2,10 @@
 
 ## Next
 
+### Major
+
+- Enabled the [`no-console`](https://eslint.org/docs/rules/no-console) rule, erroring on `console.log` but allowing `info`, `warn` and `error`.
+
 ### Patch
 
 - Updated dependencies.

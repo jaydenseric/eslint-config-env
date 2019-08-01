@@ -155,6 +155,7 @@ const config = {
     'require-atomic-updates': 'off',
     'require-await': 'error',
     'no-return-await': 'error',
+    'no-console': ['error', { allow: ['info', 'warn', 'error'] }],
     'arrow-body-style': 'error',
     curly: ['error', 'multi'],
     'sort-imports': ['error', { ignoreDeclarationSort: true }],
