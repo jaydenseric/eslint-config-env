@@ -43,18 +43,18 @@
   "dependencies": {
     "app-root-path": "^2.2.1",
     "read-pkg-up": "^6.0.0",
-    "semver": "^6.2.0"
+    "semver": "^6.3.0"
   },
   "devDependencies": {
-    "eslint": "^6.0.1",
+    "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-import-order-alphabetical": "^0.0.2",
-    "eslint-plugin-jsdoc": "^15.5.1",
+    "eslint-plugin-jsdoc": "^15.8.0",
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-prettier": "^3.1.0",
-    "husky": "^3.0.0",
-    "lint-staged": "^9.2.0",
+    "husky": "^3.0.2",
+    "lint-staged": "^9.2.1",
     "prettier": "^1.18.2"
   },
   "scripts": {
