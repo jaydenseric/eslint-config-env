@@ -6,6 +6,7 @@
 
 - Updated the [`eslint-plugin-import-order-alphabetical`](https://npm.im/eslint-plugin-import-order-alphabetical) peer dependency to `0.0.1 - 1`.
 - Updated the [`eslint-plugin-node`](https://npm.im/eslint-plugin-node) peer dependency to `9 - 10`.
+- Additionally allow the `console` methods `group`, `groupCollapsed`, `groupEnd`, and `table`.
 
 ### Patch
 
