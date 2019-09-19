@@ -10,6 +10,7 @@
 ### Patch
 
 - Updated dev dependencies.
+- Use GitHub instead of Travis for CI.
 
 ## 9.0.0
 
