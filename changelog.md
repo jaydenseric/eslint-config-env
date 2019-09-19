@@ -1,6 +1,6 @@
 # eslint-config-env changelog
 
-## Next
+## 9.1.0
 
 ### Minor
 
