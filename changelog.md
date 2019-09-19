@@ -1,5 +1,16 @@
 # eslint-config-env changelog
 
+## Next
+
+### Minor
+
+- Updated the [`eslint-plugin-import-order-alphabetical`](https://npm.im/eslint-plugin-import-order-alphabetical) peer dependency to `0.0.1 - 1`.
+- Updated the [`eslint-plugin-node`](https://npm.im/eslint-plugin-node) peer dependency to `9 - 10`.
+
+### Patch
+
+- Updated dev dependencies.
+
 ## 9.0.0
 
 ### Major
