@@ -2,6 +2,11 @@
 
 ## Next
 
+### Major
+
+- Updated the [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) peer dependency to `^15.11.0`.
+- Fixed a config load error for projects with a [`jsdoc-md`](https://npm.im/jsdoc-md) dev dependency, due to a [breaking change](https://github.com/gajus/eslint-plugin-jsdoc/commit/e791ec302052dd306021c10f360445ae0e3587f4#diff-1be37f0f54e3342877e3ea23a1c6ed64L1) published in [`eslint-plugin-jsdoc@15.11.0`](https://github.com/gajus/eslint-plugin-jsdoc/releases/tag/v15.11.0).
+
 ### Patch
 
 - Updated the [`read-pkg-up`](https://npm.im/read-pkg-up) dependency and resolved it’s breaking changes.

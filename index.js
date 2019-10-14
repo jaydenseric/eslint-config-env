@@ -1,5 +1,4 @@
 const { path: projectRootPath } = require('app-root-path')
-const tagNames = require('eslint-plugin-jsdoc/dist/tagNames')
 const readPkgUp = require('read-pkg-up')
 const semver = require('semver')
 
@@ -97,9 +96,10 @@ const JSDOC_MD_SUPPORTED_TAGS = [
  * @returns {object} Tag name preference.
  */
 const jsdocMdTagNamePreference = () => {
+  const { jsdocTags } = require('eslint-plugin-jsdoc/dist/tagNames')
   const tagNamePreference = {}
 
-  for (let [name, aliases] of Object.entries(tagNames)) {
+  for (let [name, aliases] of Object.entries(jsdocTags)) {
     const nameVariations = [name, ...aliases]
     const supportedVariation = nameVariations.find(name =>
       JSDOC_MD_SUPPORTED_TAGS.includes(name)
