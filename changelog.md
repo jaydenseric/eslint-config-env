@@ -1,5 +1,11 @@
 # eslint-config-env changelog
 
+## Next
+
+### Patch
+
+- Updated the [`read-pkg-up`](https://npm.im/read-pkg-up) dependency and resolved it’s breaking changes.
+
 ## 9.1.0
 
 ### Minor

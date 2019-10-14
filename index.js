@@ -25,7 +25,7 @@ const nodeFeaturesSinceVersionSupported = availableSinceVersion =>
   !semver.intersects(engines.node, `<${availableSinceVersion}`)
 
 const {
-  package: {
+  packageJson: {
     name,
     type,
     engines = {},
