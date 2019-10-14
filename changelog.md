@@ -10,6 +10,7 @@
 ### Patch
 
 - Updated the [`read-pkg-up`](https://npm.im/read-pkg-up) dependency and resolved it’s breaking changes.
+- Removed a redundant `@private` JSDoc tag.
 
 ## 9.1.0
 

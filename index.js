@@ -5,7 +5,6 @@ const semver = require('semver')
 /**
  * Checks packages are dev dependencies.
  * @param {string[]} packageNames Package names.
- * @private
  */
 const checkDevDependencies = packageNames => {
   packageNames.forEach(packageName => {
