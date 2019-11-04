@@ -37,20 +37,20 @@
     "eslint": "^6.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-import-order-alphabetical": "0.0.1 - 1",
-    "eslint-plugin-jsdoc": "^15.11.0",
+    "eslint-plugin-jsdoc": "15.11 - 17",
     "eslint-plugin-node": "9 - 10"
   },
   "dependencies": {
-    "app-root-path": "^2.2.1",
+    "app-root-path": "^3.0.0",
     "read-pkg-up": "^7.0.0",
     "semver": "^6.3.0"
   },
   "devDependencies": {
-    "eslint": "^6.4.0",
-    "eslint-config-prettier": "^6.3.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-import-order-alphabetical": "^1.0.0",
-    "eslint-plugin-jsdoc": "^15.9.2",
+    "eslint-plugin-jsdoc": "^17.0.1",
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-prettier": "^3.1.1",
     "husky": "^3.0.5",
