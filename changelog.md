@@ -10,6 +10,7 @@
 
 - Updated dependencies.
 - Updated the [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) peer dependency to `15.11 - 17`.
+- Added a `gitattributes` file to enforce `LF` line endings in a Windows environment.
 
 ## 10.0.0
 
