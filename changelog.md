@@ -2,6 +2,10 @@
 
 ## Next
 
+### Major
+
+- Updated the minimum supported Node.js version from v8.3 to v8.10, to match ESLint’s level of support.
+
 ### Patch
 
 - Updated dependencies.
