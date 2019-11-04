@@ -11,6 +11,7 @@
 - Updated dependencies.
 - Updated the [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) peer dependency to `15.11 - 17`.
 - Added a `gitattributes` file to enforce `LF` line endings in a Windows environment.
+- Use double instead of single quotes in the `test:prettier` package script to support Windows.
 
 ## 10.0.0
 
