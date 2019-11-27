@@ -5,6 +5,7 @@
 ### Patch
 
 - Updated dev dependencies.
+- Updated the [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) peer dependency to `15.11 - 18`.
 
 ## 11.0.0
 
