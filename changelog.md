@@ -12,6 +12,7 @@
 
 - Updated dependencies.
 - Fixed a `package.json` `type` field value of `commonjs` setting `parserOptions.sourceType` to `commonjs`, instead of `script`.
+- Remove `package-lock.json` from ignore files, as it is disabled via `.npmrc` anyway.
 
 ## 11.0.1
 
