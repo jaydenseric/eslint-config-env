@@ -10,6 +10,7 @@
 ### Patch
 
 - Updated dependencies.
+- Fixed a `package.json` `type` field value of `commonjs` setting `parserOptions.sourceType` to `commonjs`, instead of `script`.
 
 ## 11.0.1
 

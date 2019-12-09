@@ -218,9 +218,12 @@ const config = {
     ecmaVersion: 2019,
 
     // If a consumer’s package.json specifies a `type`, respect it, otherwise
-    // try to suit the project environment.
+    // try to suit the project environment. See:
+    // https://nodejs.org/api/esm.html#esm_code_package_json_code_code_type_code_field
     sourceType: type
-      ? type
+      ? type === 'module'
+        ? 'module'
+        : 'script'
       : // Next.js projects allow ESM in non .mjs files.
       env.next
       ? 'module'
