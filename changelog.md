@@ -8,6 +8,12 @@
 - Removed the [`eslint-plugin-import-order-alphabetical`](https://npm.im/eslint-plugin-import-order-alphabetical) peer dependency to use the new `import/order` rule sorting options available in [`eslint-plugin-import@2.19.0`](https://github.com/benmosher/eslint-plugin-import/blob/v2.19.0/CHANGELOG.md#2190---2019-12-08).
 - Use the [`strict`](https://eslint.org/docs/rules/strict) rule to enforce strict mode in scripts.
 
+### Minor
+
+- Setup [GitHub Sponsors funding](https://github.com/sponsors/jaydenseric):
+  - Added `.github/funding.yml` to display a sponsor button in GitHub.
+  - Added a `package.json` `funding` field to enable npm CLI funding features.
+
 ### Patch
 
 - Updated dependencies.

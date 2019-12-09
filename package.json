@@ -11,6 +11,7 @@
   "repository": "github:jaydenseric/eslint-config-env",
   "homepage": "https://github.com/jaydenseric/eslint-config-env#readme",
   "bugs": "https://github.com/jaydenseric/eslint-config-env/issues",
+  "funding": "https://github.com/sponsors/jaydenseric",
   "keywords": [
     "eslint",
     "config",
