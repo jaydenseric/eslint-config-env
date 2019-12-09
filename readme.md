@@ -17,7 +17,7 @@
 To install [`eslint-config-env`](https://npm.im/eslint-config-env) and it’s peer dependencies from [npm](https://npmjs.com) run:
 
 ```sh
-npm install eslint-config-env eslint-plugin-node eslint-plugin-import eslint-plugin-import-order-alphabetical eslint-plugin-jsdoc --save-dev
+npm install eslint-config-env eslint-plugin-node eslint-plugin-import eslint-plugin-jsdoc --save-dev
 ```
 
 Configure ESLint in your project:

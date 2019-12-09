@@ -61,7 +61,6 @@ checkDevDependencies([
   'eslint',
   'eslint-plugin-node',
   'eslint-plugin-import',
-  'eslint-plugin-import-order-alphabetical',
   'eslint-plugin-jsdoc'
 ])
 
@@ -142,7 +141,7 @@ const config = {
     }
   },
   env: { es6: true, node: true },
-  plugins: ['import-order-alphabetical', 'jsdoc'],
+  plugins: ['jsdoc'],
   extends: [
     'eslint:recommended',
     'plugin:node/recommended',
@@ -176,12 +175,12 @@ const config = {
     'import/newline-after-import': 'error',
     'import/no-useless-path-segments': 'error',
     'import/no-unresolved': 'off',
-
-    // Hopefully this will not be necessary in the future:
-    // https://github.com/benmosher/eslint-plugin-import/issues/389
-    'import-order-alphabetical/order': [
+    'import/order': [
       'error',
-      { 'newlines-between': 'never' }
+      {
+        alphabetize: { order: 'asc' },
+        'newlines-between': 'never'
+      }
     ],
 
     'jsdoc/check-alignment': 'error',
