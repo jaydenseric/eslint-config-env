@@ -6,6 +6,7 @@
 
 - Updated the [`eslint-plugin-import`](https://npm.im/eslint-plugin-import) peer dependency to `^2.19.0`.
 - Removed the [`eslint-plugin-import-order-alphabetical`](https://npm.im/eslint-plugin-import-order-alphabetical) peer dependency to use the new `import/order` rule sorting options available in [`eslint-plugin-import@2.19.0`](https://github.com/benmosher/eslint-plugin-import/blob/v2.19.0/CHANGELOG.md#2190---2019-12-08).
+- Use the [`strict`](https://eslint.org/docs/rules/strict) rule to enforce strict mode in scripts.
 
 ### Patch
 

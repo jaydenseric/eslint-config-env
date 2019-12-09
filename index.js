@@ -1,3 +1,5 @@
+'use strict'
+
 const { path: projectRootPath } = require('app-root-path')
 const readPkgUp = require('read-pkg-up')
 const semver = require('semver')
@@ -170,6 +172,7 @@ const config = {
     'arrow-body-style': 'error',
     curly: ['error', 'multi'],
     'sort-imports': ['error', { ignoreDeclarationSort: true }],
+    strict: 'error',
 
     'import/first': 'error',
     'import/newline-after-import': 'error',
