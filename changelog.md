@@ -1,5 +1,11 @@
 # eslint-config-env changelog
 
+## Next
+
+### Patch
+
+- Removed the [`require-await`](https://eslint.org/docs/rules/require-await) rule as there are valid use cases for `async` functions that don’t contain `await`, particularly around errors and rejection.
+
 ## 12.0.0
 
 ### Major
