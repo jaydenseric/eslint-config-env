@@ -1,5 +1,11 @@
 # eslint-config-env changelog
 
+## Next
+
+### Major
+
+- Updated Node.js support from v8.10+ to v10+.
+
 ## 12.0.1
 
 ### Patch
