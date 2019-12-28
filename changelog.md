@@ -5,6 +5,7 @@
 ### Major
 
 - Updated Node.js support from v8.10+ to v10+.
+- Updated dependencies, some of which require Node.js >= v10.
 
 ## 12.0.1
 
