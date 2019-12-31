@@ -4,6 +4,7 @@
 
 ### Patch
 
+- Updated the [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) peer dependency to `15.11 - 19`, and updated it’s dev dependency.
 - Stop using [`husky`](https://npm.im/husky) and [`lint-staged`](https://npm.im/lint-staged).
 
 ## 13.0.0
