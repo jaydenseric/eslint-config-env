@@ -1,5 +1,11 @@
 # eslint-config-env changelog
 
+## Next
+
+### Patch
+
+- Updated the [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) peer dependency to `15.11 - 20`, and updated it’s dev dependency.
+
 ## 13.0.1
 
 ### Patch
