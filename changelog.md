@@ -1,6 +1,6 @@
 # eslint-config-env changelog
 
-## Next
+## 13.0.5
 
 ### Patch
 
