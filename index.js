@@ -1,19 +1,19 @@
-'use strict'
+'use strict';
 
-const { path: projectRootPath } = require('app-root-path')
-const readPkgUp = require('read-pkg-up')
-const semver = require('semver')
+const { path: projectRootPath } = require('app-root-path');
+const readPkgUp = require('read-pkg-up');
+const semver = require('semver');
 
 /**
  * Checks packages are dev dependencies.
  * @param {string[]} packageNames Package names.
  */
-const checkDevDependencies = packageNames => {
-  packageNames.forEach(packageName => {
+const checkDevDependencies = (packageNames) => {
+  packageNames.forEach((packageName) => {
     if (!devDependencies[packageName])
-      throw new Error(`Add ${packageName} to ${name} devDependencies.`)
-  })
-}
+      throw new Error(`Add ${packageName} to ${name} devDependencies.`);
+  });
+};
 
 /**
  * Determines if Node.js features available since a given version are supported
@@ -21,8 +21,8 @@ const checkDevDependencies = packageNames => {
  * @param {number} availableSinceVersion First Node.js version the features are available in.
  * @returns {boolean} Are the features supported.
  */
-const nodeFeaturesSinceVersionSupported = availableSinceVersion =>
-  !semver.intersects(engines.node, `<${availableSinceVersion}`)
+const nodeFeaturesSinceVersionSupported = (availableSinceVersion) =>
+  !semver.intersects(engines.node, `<${availableSinceVersion}`);
 
 const {
   packageJson: {
@@ -32,17 +32,17 @@ const {
     browserslist,
     peerDependencies = {},
     dependencies = {},
-    devDependencies = {}
-  } = {}
-} = readPkgUp.sync({ cwd: projectRootPath })
+    devDependencies = {},
+  } = {},
+} = readPkgUp.sync({ cwd: projectRootPath });
 
 if (!('node' in engines))
   throw new Error(
     'Specify supported Node.js versions in the package.json field `engines.node`.'
-  )
+  );
 
 if (!semver.validRange(engines.node))
-  throw new Error('Invalid semver range in package.json field `engines.node`.')
+  throw new Error('Invalid semver range in package.json field `engines.node`.');
 
 const env = {
   browser: !!browserslist,
@@ -50,8 +50,8 @@ const env = {
   prettier: !!devDependencies.prettier,
   react: !!peerDependencies.react || !!dependencies.react,
   next: !!dependencies.next,
-  jsdocMd: !!devDependencies['jsdoc-md']
-}
+  jsdocMd: !!devDependencies['jsdoc-md'],
+};
 
 // Note: Only external plugins and config referenced in the base config can be
 // package.json peerDependencies.
@@ -63,8 +63,8 @@ checkDevDependencies([
   'eslint',
   'eslint-plugin-node',
   'eslint-plugin-import',
-  'eslint-plugin-jsdoc'
-])
+  'eslint-plugin-jsdoc',
+]);
 
 /**
  * The Node.js resolve extensions, in order of preference. Note that Node.js v12
@@ -72,7 +72,7 @@ checkDevDependencies([
  * implementation that does and hope that a future Node.js release will restore
  * the behavior.
  */
-const NODE_RESOLVE_EXTENSIONS = ['.mjs', '.js', '.json', '.node']
+const NODE_RESOLVE_EXTENSIONS = ['.mjs', '.js', '.json', '.node'];
 
 /**
  * A list of JSDoc tags allowed by jsdoc-md.
@@ -87,8 +87,8 @@ const JSDOC_MD_SUPPORTED_TAGS = [
   'returns',
   'see',
   'example',
-  'ignore'
-]
+  'ignore',
+];
 
 /**
  * Generates a `settings.jsdoc.tagNamePreference` object suitable for a project
@@ -96,27 +96,27 @@ const JSDOC_MD_SUPPORTED_TAGS = [
  * @returns {object} Tag name preference.
  */
 const jsdocMdTagNamePreference = () => {
-  const { jsdocTags } = require('eslint-plugin-jsdoc/dist/tagNames')
-  const tagNamePreference = {}
+  const { jsdocTags } = require('eslint-plugin-jsdoc/dist/tagNames');
+  const tagNamePreference = {};
 
   for (let [name, aliases] of Object.entries(jsdocTags)) {
-    const nameVariations = [name, ...aliases]
-    const supportedVariation = nameVariations.find(name =>
+    const nameVariations = [name, ...aliases];
+    const supportedVariation = nameVariations.find((name) =>
       JSDOC_MD_SUPPORTED_TAGS.includes(name)
-    )
+    );
 
-    nameVariations.forEach(name => {
+    nameVariations.forEach((name) => {
       if (!JSDOC_MD_SUPPORTED_TAGS.includes(name))
         tagNamePreference[name] = supportedVariation
           ? supportedVariation
           : {
-              message: `The JSDoc @${name} tag is unsupported by jsdoc-md.`
-            }
-    })
+              message: `The JSDoc @${name} tag is unsupported by jsdoc-md.`,
+            };
+    });
   }
 
-  return tagNamePreference
-}
+  return tagNamePreference;
+};
 
 // Base config assumes a vanilla Node.js project.
 const config = {
@@ -124,7 +124,7 @@ const config = {
     node: {
       // By default, eslint-plugin-node does‘t support .mjs as it supports the
       // Node.js v12 --experimental-modules implementation.
-      tryExtensions: NODE_RESOLVE_EXTENSIONS
+      tryExtensions: NODE_RESOLVE_EXTENSIONS,
     },
 
     // By default, eslint-plugin-import does‘t support .mjs:
@@ -138,16 +138,16 @@ const config = {
         : {
             // `@property` is too long, and is inconsistent with how `@param` is
             // abbreviated. Also, jsdoc-md only supports `@prop`.
-            property: 'prop'
-          }
-    }
+            property: 'prop',
+          },
+    },
   },
   env: { es6: true, node: true },
   plugins: ['jsdoc'],
   extends: [
     'eslint:recommended',
     'plugin:node/recommended',
-    'plugin:import/recommended'
+    'plugin:import/recommended',
   ],
   rules: {
     // This rule has too many false positives:
@@ -164,9 +164,9 @@ const config = {
           'groupEnd',
           'info',
           'table',
-          'warn'
-        ]
-      }
+          'warn',
+        ],
+      },
     ],
     'arrow-body-style': 'error',
     curly: ['error', 'multi'],
@@ -181,8 +181,8 @@ const config = {
       'error',
       {
         alphabetize: { order: 'asc' },
-        'newlines-between': 'never'
-      }
+        'newlines-between': 'never',
+      },
     ],
 
     'jsdoc/check-alignment': 'error',
@@ -194,8 +194,8 @@ const config = {
         // To only check the caption, reject literally any example. Perhaps in
         // the future checking examples will be doable:
         // https://github.com/gajus/eslint-plugin-jsdoc/issues/331
-        rejectExampleCodeRegex: '[^]*'
-      }
+        rejectExampleCodeRegex: '[^]*',
+      },
     ],
     'jsdoc/check-param-names': 'error',
     'jsdoc/check-tag-names': 'error',
@@ -212,7 +212,7 @@ const config = {
     'jsdoc/require-returns-check': 'error',
     'jsdoc/require-returns-description': 'error',
     'jsdoc/require-returns-type': 'error',
-    'jsdoc/valid-types': 'error'
+    'jsdoc/valid-types': 'error',
   },
 
   // These base options apply to all linted files, including .js and .jsx.
@@ -229,7 +229,7 @@ const config = {
       : // Next.js projects allow ESM in non .mjs files.
       env.next
       ? 'module'
-      : 'script'
+      : 'script',
   },
 
   // Enforce file extension specific Node.js standards. eslint-plugin-node
@@ -241,24 +241,24 @@ const config = {
     {
       files: ['*.cjs'],
       parserOptions: {
-        sourceType: 'script'
-      }
+        sourceType: 'script',
+      },
     },
     {
       files: ['*.mjs'],
       parserOptions: {
-        sourceType: 'module'
-      }
-    }
-  ]
-}
+        sourceType: 'module',
+      },
+    },
+  ],
+};
 
 if (env.browser) {
-  config.env.browser = true
+  config.env.browser = true;
 
   if (!env.babel) {
-    checkDevDependencies(['eslint-plugin-compat'])
-    config.extends.push('plugin:compat/recommended')
+    checkDevDependencies(['eslint-plugin-compat']);
+    config.extends.push('plugin:compat/recommended');
   }
 }
 
@@ -266,56 +266,56 @@ if (env.browser) {
 // available in all browsers supported in the project’s browserslist config.
 
 if (env.babel || (!env.browser && nodeFeaturesSinceVersionSupported('6.4')))
-  config.rules['prefer-destructuring'] = 'error'
+  config.rules['prefer-destructuring'] = 'error';
 
 if (env.babel || (!env.browser && nodeFeaturesSinceVersionSupported('6')))
-  config.rules['prefer-arrow-callback'] = 'error'
+  config.rules['prefer-arrow-callback'] = 'error';
 
 if (env.babel || (!env.browser && nodeFeaturesSinceVersionSupported('4')))
   config.rules['object-shorthand'] = [
     'error',
     'always',
-    { avoidExplicitReturnArrows: true }
-  ]
+    { avoidExplicitReturnArrows: true },
+  ];
 
 if (env.babel) {
-  checkDevDependencies(['babel-eslint'])
-  config.parser = 'babel-eslint'
+  checkDevDependencies(['babel-eslint']);
+  config.parser = 'babel-eslint';
 
   // Assume all unsupported Node.js features used are transpiled. It would be
   // nice if there was a way to check Babel config and only disable disable
   // checking features known to be transpiled.
-  config.rules['node/no-unsupported-features/es-builtins'] = 'off'
-  config.rules['node/no-unsupported-features/es-syntax'] = 'off'
+  config.rules['node/no-unsupported-features/es-builtins'] = 'off';
+  config.rules['node/no-unsupported-features/es-syntax'] = 'off';
 }
 
 if (env.react) {
-  checkDevDependencies(['eslint-plugin-react', 'eslint-plugin-react-hooks'])
-  config.extends.push('plugin:react/recommended')
+  checkDevDependencies(['eslint-plugin-react', 'eslint-plugin-react-hooks']);
+  config.extends.push('plugin:react/recommended');
 
   // Prevents an eslint-plugin-react warning, see:
   // https://github.com/yannickcr/eslint-plugin-react/issues/1955#issuecomment-450771510
-  config.settings.react = { version: 'detect' }
+  config.settings.react = { version: 'detect' };
 
-  config.plugins.push('react-hooks')
-  config.rules['react-hooks/rules-of-hooks'] = 'error'
-  config.rules['react-hooks/exhaustive-deps'] = 'error'
+  config.plugins.push('react-hooks');
+  config.rules['react-hooks/rules-of-hooks'] = 'error';
+  config.rules['react-hooks/exhaustive-deps'] = 'error';
 }
 
 if (env.prettier) {
-  checkDevDependencies(['eslint-config-prettier', 'eslint-plugin-prettier'])
-  config.extends.push('plugin:prettier/recommended')
-  if (env.react) config.extends.push('prettier/react')
+  checkDevDependencies(['eslint-config-prettier', 'eslint-plugin-prettier']);
+  config.extends.push('plugin:prettier/recommended');
+  if (env.react) config.extends.push('prettier/react');
 }
 
 if (env.next) {
   // Next.js projects allow ESM in non .mjs files.
-  config.rules['node/no-extraneous-import'] = 'error'
-  config.rules['node/no-missing-import'] = 'error'
-  config.rules['node/no-unpublished-import'] = 'error'
+  config.rules['node/no-extraneous-import'] = 'error';
+  config.rules['node/no-missing-import'] = 'error';
+  config.rules['node/no-unpublished-import'] = 'error';
 
   // Next.js uses https://npm.im/babel-plugin-react-require.
-  config.rules['react/react-in-jsx-scope'] = 'off'
+  config.rules['react/react-in-jsx-scope'] = 'off';
 }
 
-module.exports = config
+module.exports = config;

@@ -6,6 +6,7 @@
 
 - Updated the [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) peer dependency to `15.11 - 23`.
 - Updated dependencies.
+- Updated the [`prettier`](https://npm.im/prettier) dev dependency, config and package `test:prettier` script.
 
 ## 13.0.4
 
