@@ -1,5 +1,11 @@
 # eslint-config-env changelog
 
+## Next
+
+### Patch
+
+- Updated dependencies.
+
 ## 13.0.4
 
 ### Patch
