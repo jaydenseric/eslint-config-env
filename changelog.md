@@ -6,6 +6,7 @@
 
 - Updated the [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) peer dependency to `15.11 - 23`.
 - Updated dependencies.
+- Also run GitHub Actions with Node.js v14.
 
 ## 13.0.5
 
