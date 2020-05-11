@@ -1,10 +1,16 @@
 # eslint-config-env changelog
 
+## Next
+
+### Patch
+
+- v13.0.6 changelog entry typo fix.
+
 ## 13.0.6
 
 ### Patch
 
-- Updated the [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) peer dependency to `15.11 - 23`.
+- Updated the [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) peer dependency to `15.11 - 24`.
 - Updated dependencies.
 - Also run GitHub Actions with Node.js v14.
 
