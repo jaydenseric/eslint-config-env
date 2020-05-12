@@ -170,6 +170,8 @@ const config = {
     'sort-imports': ['error', { ignoreDeclarationSort: true }],
     strict: 'error',
 
+    'node/file-extension-in-import': ['error', 'always'],
+
     'import/first': 'error',
     'import/newline-after-import': 'error',
     'import/no-useless-path-segments': 'error',
@@ -310,6 +312,9 @@ if (env.next) {
   config.rules['node/no-extraneous-import'] = 'error';
   config.rules['node/no-missing-import'] = 'error';
   config.rules['node/no-unpublished-import'] = 'error';
+
+  // Next.js projects allow extensionless import specifiers.
+  config.rules['node/file-extension-in-import'] = 'off';
 
   // Next.js uses https://npm.im/babel-plugin-react-require.
   config.rules['react/react-in-jsx-scope'] = 'off';

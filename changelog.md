@@ -2,6 +2,10 @@
 
 ## Next
 
+### Major
+
+- Enforce file extensions in import specifiers for non Next.js environments via the [`node/file-extension-in-import`](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/file-extension-in-import.md) rule, as they are now [mandatory in Node.js](https://nodejs.org/api/esm.html#esm_mandatory_file_extensions).
+
 ### Patch
 
 - Updated the [`eslint`](https://npm.im/eslint) peer dependency to `6 - 7`.
