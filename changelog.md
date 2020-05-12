@@ -5,6 +5,10 @@
 ### Major
 
 - Enforce file extensions in import specifiers for non Next.js environments via the [`node/file-extension-in-import`](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/file-extension-in-import.md) rule, as they are now [mandatory in Node.js](https://nodejs.org/api/esm.html#esm_mandatory_file_extensions).
+- Enabled the [`react/jsx-boolean-value`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md) rule.
+- Enabled the [`react/jsx-curly-brace-presence`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-brace-presence.md) rule.
+- Enabled the [`react/jsx-fragments`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-fragments.md) rule.
+- Enabled the [`react/jsx-no-useless-fragment`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/react/jsx-no-useless-fragment.md) rule.
 - Removed configuration to resolve `.mjs`, as Node.js no longer does so.
 
 ### Patch

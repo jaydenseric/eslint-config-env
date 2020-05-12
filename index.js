@@ -277,6 +277,11 @@ if (env.react) {
   // https://github.com/yannickcr/eslint-plugin-react/issues/1955#issuecomment-450771510
   config.settings.react = { version: 'detect' };
 
+  config.rules['react/jsx-boolean-value'] = 'error';
+  config.rules['react/jsx-curly-brace-presence'] = 'error';
+  config.rules['react/jsx-fragments'] = 'error';
+  config.rules['react/jsx-no-useless-fragment'] = 'error';
+
   config.plugins.push('react-hooks');
   config.rules['react-hooks/rules-of-hooks'] = 'error';
   config.rules['react-hooks/exhaustive-deps'] = 'error';
