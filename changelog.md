@@ -14,7 +14,7 @@
 - Updated dependencies.
 - Removed disabling the [`require-atomic-updates`](https://eslint.org/docs/rules/require-atomic-updates) rule, as it is no longer part of the `eslint:recommended` rule set.
 - Fixed a comment typo.
-- v13.0.6 changelog entry typo fix.
+- Fixed a v13.0.6 changelog entry typo.
 
 ## 13.0.6
 
