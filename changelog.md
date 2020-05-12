@@ -7,6 +7,7 @@
 - Updated the [`eslint`](https://npm.im/eslint) peer dependency to `6 - 7`.
 - Updated the [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) peer dependency to `15.11 - 25`.
 - Updated dependencies.
+- Removed disabling the [`require-atomic-updates`](https://eslint.org/docs/rules/require-atomic-updates) rule, as it is no longer part of the `eslint:recommended` rule set.
 - v13.0.6 changelog entry typo fix.
 
 ## 13.0.6

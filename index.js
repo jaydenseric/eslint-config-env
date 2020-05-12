@@ -150,9 +150,6 @@ const config = {
     'plugin:import/recommended',
   ],
   rules: {
-    // This rule has too many false positives:
-    // https://github.com/eslint/eslint/issues/11899
-    'require-atomic-updates': 'off',
     'no-return-await': 'error',
     'no-console': [
       'error',
