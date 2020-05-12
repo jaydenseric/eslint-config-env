@@ -263,8 +263,8 @@ if (env.babel) {
   config.parser = 'babel-eslint';
 
   // Assume all unsupported Node.js features used are transpiled. It would be
-  // nice if there was a way to check Babel config and only disable disable
-  // checking features known to be transpiled.
+  // nice if there was a way to check Babel config and only disable checking
+  // features known to be transpiled.
   config.rules['node/no-unsupported-features/es-builtins'] = 'off';
   config.rules['node/no-unsupported-features/es-syntax'] = 'off';
 }
