@@ -67,14 +67,6 @@ checkDevDependencies([
 ]);
 
 /**
- * The Node.js resolve extensions, in order of preference. Note that Node.js v12
- * --experimental-modules mode no longer scans for .mjs; we support the earlier
- * implementation that does and hope that a future Node.js release will restore
- * the behavior.
- */
-const NODE_RESOLVE_EXTENSIONS = ['.mjs', '.js', '.json', '.node'];
-
-/**
  * A list of JSDoc tags allowed by jsdoc-md.
  * @see [jsdoc-md docs](https://github.com/jaydenseric/jsdoc-md#tag-subset).
  */
@@ -121,17 +113,6 @@ const jsdocMdTagNamePreference = () => {
 // Base config assumes a vanilla Node.js project.
 const config = {
   settings: {
-    node: {
-      // By default, eslint-plugin-node does‘t support .mjs as it supports the
-      // Node.js v12 --experimental-modules implementation.
-      tryExtensions: NODE_RESOLVE_EXTENSIONS,
-    },
-
-    // By default, eslint-plugin-import does‘t support .mjs:
-    // https://github.com/benmosher/eslint-plugin-import/issues/1359
-    'import/extensions': NODE_RESOLVE_EXTENSIONS,
-    'import/resolver': { node: { extensions: NODE_RESOLVE_EXTENSIONS } },
-
     jsdoc: {
       tagNamePreference: env.jsdocMd
         ? jsdocMdTagNamePreference()

@@ -5,6 +5,7 @@
 ### Major
 
 - Enforce file extensions in import specifiers for non Next.js environments via the [`node/file-extension-in-import`](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/file-extension-in-import.md) rule, as they are now [mandatory in Node.js](https://nodejs.org/api/esm.html#esm_mandatory_file_extensions).
+- Removed configuration to resolve `.mjs`, as Node.js no longer does so.
 
 ### Patch
 
