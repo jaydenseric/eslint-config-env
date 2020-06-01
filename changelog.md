@@ -1,5 +1,11 @@
 # eslint-config-env changelog
 
+## Next
+
+### Patch
+
+- Updated the package `engines.node` field to `^10.13.0 || >= 12.0.0`. This is mostly determined by what Node.js versions dev dependencies such as [`eslint`](https://npm.im/eslint) and [`prettier`](https://npm.im/prettier) support.
+
 ## 14.0.0
 
 ### Major
