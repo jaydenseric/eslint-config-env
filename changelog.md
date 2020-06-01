@@ -5,6 +5,8 @@
 ### Patch
 
 - Updated the package `engines.node` field to `^10.13.0 || >= 12.0.0`. This is mostly determined by what Node.js versions dev dependencies such as [`eslint`](https://npm.im/eslint) and [`prettier`](https://npm.im/prettier) support.
+- Updated the [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) peer dependency to `15.11 - 26`.
+- Updated dev dependencies.
 
 ## 14.0.0
 
