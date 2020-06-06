@@ -6,6 +6,7 @@
 
 - Updated the [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) peer dependency to `15.11 - 27`.
 - Updated dev dependencies.
+- Updated the EditorConfig.
 
 ## 14.0.1
 
