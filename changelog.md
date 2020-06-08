@@ -5,6 +5,7 @@
 ### Patch
 
 - Updated dev dependencies.
+- Allow the [`@fires`](https://jsdoc.app/tags-fires) JSDoc tag in [`jsdoc-md`](https://npm.im/jsdoc-md) projects as it’s supported in [v7.0.0](https://github.com/jaydenseric/jsdoc-md/releases/tag/v7.0.0).
 
 ## 14.0.2
 

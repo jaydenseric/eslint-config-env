@@ -77,6 +77,7 @@ const JSDOC_MD_SUPPORTED_TAGS = [
   'prop',
   'param',
   'returns',
+  'fires',
   'see',
   'example',
   'ignore',
