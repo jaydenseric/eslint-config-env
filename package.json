@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-env",
-  "version": "14.0.2",
+  "version": "14.0.3",
   "description": "ESLint config optimized for authoring packages that adapts to the project environment.",
   "license": "MIT",
   "author": {
