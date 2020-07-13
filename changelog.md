@@ -2,6 +2,10 @@
 
 ## Next
 
+### Major
+
+- Enabled the [`react/no-array-index-key`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md) rule.
+
 ### Patch
 
 - Updated the [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) peer dependency to `15.11 - 29`.

@@ -282,6 +282,7 @@ if (env.react) {
   config.rules['react/jsx-curly-brace-presence'] = 'error';
   config.rules['react/jsx-fragments'] = 'error';
   config.rules['react/jsx-no-useless-fragment'] = 'error';
+  config.rules['react/no-array-index-key'] = 'error';
 
   config.plugins.push('react-hooks');
   config.rules['react-hooks/rules-of-hooks'] = 'error';
