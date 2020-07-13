@@ -6,6 +6,7 @@
 
 - Updated the [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) peer dependency to `15.11 - 29`.
 - Updated dev dependencies.
+- Simplified GitHub Actions CI config with the [`npm install-test`](https://docs.npmjs.com/cli/install-test.html) command.
 
 ## 14.0.4
 
