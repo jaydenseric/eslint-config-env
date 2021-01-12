@@ -4,6 +4,7 @@
 
 ### Patch
 
+- Updated the [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) peer dependency to `15.11 - 31`.
 - Updated dependencies.
 - Updated GitHub Actions CI config:
   - Updated `actions/checkout` to v2.

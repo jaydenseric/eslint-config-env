@@ -37,7 +37,7 @@
   "peerDependencies": {
     "eslint": "6 - 7",
     "eslint-plugin-import": "^2.19.0",
-    "eslint-plugin-jsdoc": "15.11 - 30",
+    "eslint-plugin-jsdoc": "15.11 - 31",
     "eslint-plugin-node": "9 - 11"
   },
   "dependencies": {
