@@ -2,9 +2,16 @@
 
 ## Next
 
+### Major
+
+- Updated peer dependencies:
+  - [`eslint`](https://npm.im/eslint) to `^7.2.0`. While the ESLint config is compatible with v7.0.0+ the [`eslint-plugin-import`](https://npm.im/eslint-plugin-import) peer dependency demands v7.2.0+, see [benmosher/eslint-plugin-import@d84062e#commitcomment-45868154](https://github.com/benmosher/eslint-plugin-import/commit/d84062e290b1e2b80f459ecff7dde5ea5f8c0141#commitcomment-45868154).
+  - [`eslint-plugin-import`](https://npm.im/eslint-plugin-import) to `^2.21.0`.
+  - [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) to `25 - 31`.
+- Updated the ESLint `parserOptions.ecmaVersion` config from `2019` to `2021` in order to support linting code containing dynamic imports. This change breaks support for [`eslint`](https://npm.im/eslint) v6.
+
 ### Patch
 
-- Updated the [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) peer dependency to `15.11 - 31`.
 - Updated dependencies.
 - Updated GitHub Actions CI config:
   - Updated `actions/checkout` to v2.

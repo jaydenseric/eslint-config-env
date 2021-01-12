@@ -198,7 +198,7 @@ const config = {
 
   // These base options apply to all linted files, including .js and .jsx.
   parserOptions: {
-    ecmaVersion: 2019,
+    ecmaVersion: 2021,
 
     // If a consumer’s package.json specifies a `type`, respect it, otherwise
     // try to suit the project environment. See:
