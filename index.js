@@ -202,7 +202,7 @@ const config = {
 
     // If a consumer’s package.json specifies a `type`, respect it, otherwise
     // try to suit the project environment. See:
-    // https://nodejs.org/api/esm.html#esm_code_package_json_code_code_type_code_field
+    // https://nodejs.org/api/packages.html#packages_type
     sourceType: type
       ? type === 'module'
         ? 'module'
