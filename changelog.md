@@ -2,6 +2,10 @@
 
 ## Next
 
+### Major
+
+- Added more (auto-fixable) JSDoc tag name preferences for non [`jsdoc-md`](https://npm.im/jsdoc-md) projects.
+
 ### Patch
 
 - Updated the JSDoc tag name preference config to support [`jsdoc-md`](https://npm.im/jsdoc-md) [v9.0.0](https://github.com/jaydenseric/jsdoc-md/releases/tag/v9.0.0).
