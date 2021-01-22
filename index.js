@@ -71,12 +71,21 @@ checkDevDependencies([
  * @see [jsdoc-md docs](https://github.com/jaydenseric/jsdoc-md#tag-subset).
  */
 const JSDOC_MD_SUPPORTED_TAGS = [
+  'desc',
+  'description',
   'kind',
   'name',
+  'typedef',
+  'callback',
   'type',
   'prop',
+  'property',
+  'arg',
+  'argument',
   'param',
+  'return',
   'returns',
+  'emits',
   'fires',
   'see',
   'example',
@@ -84,32 +93,36 @@ const JSDOC_MD_SUPPORTED_TAGS = [
 ];
 
 /**
+ * Preferred JSDoc tag names.
+ */
+const JSDOC_TAG_NAME_PREFERENCE = {
+  property: 'prop',
+  arg: 'param',
+  argument: 'param',
+  return: 'returns',
+  emits: 'fires',
+};
+
+/**
  * Generates a `settings.jsdoc.tagNamePreference` object suitable for a project
  * using jsdoc-md.
  * @returns {object} Tag name preference.
  */
-const jsdocMdTagNamePreference = () => {
+function jsdocMdTagNamePreference() {
   const { jsdocTags } = require('eslint-plugin-jsdoc/dist/tagNames');
-  const tagNamePreference = {};
+  const tagNamePreference = {
+    ...JSDOC_TAG_NAME_PREFERENCE,
+  };
 
-  for (let [name, aliases] of Object.entries(jsdocTags)) {
-    const nameVariations = [name, ...aliases];
-    const supportedVariation = nameVariations.find((name) =>
-      JSDOC_MD_SUPPORTED_TAGS.includes(name)
-    );
-
-    nameVariations.forEach((name) => {
-      if (!JSDOC_MD_SUPPORTED_TAGS.includes(name))
-        tagNamePreference[name] = supportedVariation
-          ? supportedVariation
-          : {
-              message: `The JSDoc @${name} tag is unsupported by jsdoc-md.`,
-            };
-    });
-  }
+  for (const [name, aliases] of Object.entries(jsdocTags))
+    for (const tagName of [name, ...aliases])
+      if (!JSDOC_MD_SUPPORTED_TAGS.includes(tagName))
+        tagNamePreference[tagName] = {
+          message: `The JSDoc tag \`@${tagName}\` is unsupported by jsdoc-md.`,
+        };
 
   return tagNamePreference;
-};
+}
 
 // Base config assumes a vanilla Node.js project.
 const config = {
@@ -117,11 +130,7 @@ const config = {
     jsdoc: {
       tagNamePreference: env.jsdocMd
         ? jsdocMdTagNamePreference()
-        : {
-            // `@property` is too long, and is inconsistent with how `@param` is
-            // abbreviated. Also, jsdoc-md only supports `@prop`.
-            property: 'prop',
-          },
+        : JSDOC_TAG_NAME_PREFERENCE,
     },
   },
   env: { es6: true, node: true },

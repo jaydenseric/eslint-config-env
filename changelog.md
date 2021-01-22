@@ -1,5 +1,11 @@
 # eslint-config-env changelog
 
+## Next
+
+### Patch
+
+- Updated the JSDoc tag name preference config to support [`jsdoc-md`](https://npm.im/jsdoc-md) [v9.0.0](https://github.com/jaydenseric/jsdoc-md/releases/tag/v9.0.0).
+
 ## 16.0.0
 
 ### Major
