@@ -6,14 +6,15 @@ const semver = require('semver');
 
 /**
  * Checks packages are dev dependencies.
- * @param {string[]} packageNames Package names.
+ * @param {Array<string>} packageNames Package names.
  */
-const checkDevDependencies = (packageNames) => {
-  packageNames.forEach((packageName) => {
+function checkDevDependencies(packageNames) {
+  for (const packageName of packageNames)
     if (!devDependencies[packageName])
-      throw new Error(`Add ${packageName} to ${name} devDependencies.`);
-  });
-};
+      throw new Error(
+        `Install missing project dev dependency \`${packageName}\`.`
+      );
+}
 
 /**
  * Determines if Node.js features available since a given version are supported
@@ -26,7 +27,6 @@ const nodeFeaturesSinceVersionSupported = (availableSinceVersion) =>
 
 const {
   packageJson: {
-    name,
     type,
     engines = {},
     browserslist,
@@ -42,7 +42,9 @@ if (!('node' in engines))
   );
 
 if (!semver.validRange(engines.node))
-  throw new Error('Invalid semver range in package.json field `engines.node`.');
+  throw new Error(
+    'Invalid semver range in the package.json field `engines.node`.'
+  );
 
 const env = {
   browser: !!browserslist,
