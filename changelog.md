@@ -10,6 +10,7 @@
 ### Patch
 
 - Updated dev dependencies.
+- Updated the Next.js environment setup instructions.
 
 ## 17.0.0
 

@@ -70,7 +70,7 @@ npm install eslint-plugin-react eslint-plugin-react-hooks --save-dev
 
 ### Next.js
 
-A [Next.js](https://nextjs.org) project does not require additional setup.
+Follow the [Babel setup instructions](#babel).
 
 ### jsdoc-md
 
