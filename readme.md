@@ -46,10 +46,10 @@ Supported browsers **_must_** be specified in the [`package.json` `browserslist`
 
 ### Babel
 
-Also install [`babel-eslint`](https://npm.im/babel-eslint):
+Also install [`@babel/eslint-parser`](https://npm.im/@babel/eslint-parser):
 
 ```sh
-npm install babel-eslint --save-dev
+npm install @babel/eslint-parser --save-dev
 ```
 
 ### Prettier

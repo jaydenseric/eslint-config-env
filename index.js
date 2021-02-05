@@ -226,9 +226,9 @@ const config = {
 
   // Enforce file extension specific Node.js standards. eslint-plugin-node
   // attempts to do this, but `parserOptions.sourceType` gets overridden by
-  // eslint-plugin-import and babel-eslint setting `module`. Since ESLint v6+
-  // parent configs take priority, so these overrides should be final unless
-  // overridden by the consumer’s config.
+  // eslint-plugin-import and @babel/eslint-parser setting `module`. Since
+  // ESLint v6+ parent configs take priority, so these overrides should be final
+  // unless overridden by the consumer’s config.
   overrides: [
     {
       files: ['*.cjs'],
@@ -271,8 +271,8 @@ if (env.babel || (!env.browser && nodeFeaturesSinceVersionSupported('4')))
   ];
 
 if (env.babel) {
-  checkDevDependencies(['babel-eslint']);
-  config.parser = 'babel-eslint';
+  checkDevDependencies(['@babel/eslint-parser']);
+  config.parser = '@babel/eslint-parser';
 
   // Assume all unsupported Node.js features used are transpiled. It would be
   // nice if there was a way to check Babel config and only disable checking
