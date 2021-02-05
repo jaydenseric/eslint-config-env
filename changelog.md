@@ -6,6 +6,7 @@
 
 - Updated the [`eslint`](https://npm.im/eslint) peer dependency to `^7.5.0`, due to the requirements of [`@babel/eslint-parser`](https://npm.im/@babel/eslint-parser).
 - Replaced [`babel-eslint`](https://npm.im/babel-eslint) with [`@babel/eslint-parser`](https://npm.im/@babel/eslint-parser).
+- Enabled the [`require-unicode-regexp`](https://eslint.org/docs/rules/require-unicode-regexp) rule.
 
 ### Patch
 

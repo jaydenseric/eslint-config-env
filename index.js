@@ -161,6 +161,7 @@ const config = {
     'arrow-body-style': 'error',
     curly: ['error', 'multi'],
     'sort-imports': ['error', { ignoreDeclarationSort: true }],
+    'require-unicode-regexp': 'error',
     strict: 'error',
 
     'node/file-extension-in-import': ['error', 'always'],
