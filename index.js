@@ -275,6 +275,10 @@ if (env.babel) {
   checkDevDependencies(['@babel/eslint-parser']);
   config.parser = '@babel/eslint-parser';
 
+  // Prevent a parsing error when linting a file not under the scope of a Babel
+  // config file.
+  config.parserOptions.requireConfigFile = false;
+
   // Assume all unsupported Node.js features used are transpiled. It would be
   // nice if there was a way to check Babel config and only disable checking
   // features known to be transpiled.

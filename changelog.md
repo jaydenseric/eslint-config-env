@@ -1,5 +1,11 @@
 # eslint-config-env changelog
 
+## Next
+
+### Patch
+
+- For Babel environments, prevent a parsing error when linting a file not under the scope of a Babel config file.
+
 ## 18.0.0
 
 ### Major
