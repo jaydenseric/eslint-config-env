@@ -7,6 +7,10 @@
 - Updated the [`eslint`](https://npm.im/eslint) peer dependency to `^7.5.0`, due to the requirements of [`@babel/eslint-parser`](https://npm.im/@babel/eslint-parser).
 - Replaced [`babel-eslint`](https://npm.im/babel-eslint) with [`@babel/eslint-parser`](https://npm.im/@babel/eslint-parser).
 
+### Patch
+
+- Updated dev dependencies.
+
 ## 17.0.0
 
 ### Major
