@@ -5,6 +5,13 @@
 ### Major
 
 - Support [`eslint-config-prettier`](https://npm.im/eslint-config-prettier) v8, fixing [#3](https://github.com/jaydenseric/eslint-config-env/issues/3).
+- Enabled [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) rules:
+  - [`jsdoc/check-property-names`](https://github.com/gajus/eslint-plugin-jsdoc#check-property-names)
+  - [`jsdoc/empty-tags`](https://github.com/gajus/eslint-plugin-jsdoc#empty-tags)
+  - [`jsdoc/require-property`](https://github.com/gajus/eslint-plugin-jsdoc#require-property)
+  - [`jsdoc/require-property-description`](https://github.com/gajus/eslint-plugin-jsdoc#require-property-description)
+  - [`jsdoc/require-property-name`](https://github.com/gajus/eslint-plugin-jsdoc#require-property-name)
+  - [`jsdoc/require-property-type`](https://github.com/gajus/eslint-plugin-jsdoc#require-property-type)
 
 ### Patch
 
