@@ -158,7 +158,6 @@ const config = {
         ],
       },
     ],
-    'arrow-body-style': 'error',
     curly: ['error', 'multi'],
     'sort-imports': ['error', { ignoreDeclarationSort: true }],
     'require-unicode-regexp': 'error',
@@ -261,9 +260,6 @@ if (env.browser) {
 if (env.babel || (!env.browser && nodeFeaturesSinceVersionSupported('6.4')))
   config.rules['prefer-destructuring'] = 'error';
 
-if (env.babel || (!env.browser && nodeFeaturesSinceVersionSupported('6')))
-  config.rules['prefer-arrow-callback'] = 'error';
-
 if (env.babel || (!env.browser && nodeFeaturesSinceVersionSupported('4')))
   config.rules['object-shorthand'] = [
     'error',
@@ -308,7 +304,6 @@ if (env.react) {
 if (env.prettier) {
   checkDevDependencies(['eslint-config-prettier', 'eslint-plugin-prettier']);
   config.extends.push('plugin:prettier/recommended');
-  if (env.react) config.extends.push('prettier/react');
 }
 
 if (env.next) {

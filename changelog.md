@@ -2,9 +2,16 @@
 
 ## Next
 
+### Major
+
+- Support [`eslint-config-prettier`](https://npm.im/eslint-config-prettier) v8, fixing [#3](https://github.com/jaydenseric/eslint-config-env/issues/3).
+
 ### Patch
 
 - Updated dependencies.
+- Removed rules that conflict with [`eslint-plugin-prettier`](https://npm.im/eslint-plugin-prettier) (see [prettier/eslint-plugin-prettier#65](https://github.com/prettier/eslint-plugin-prettier/issues/65)) and are disabled via the `plugin:prettier/recommended` config anyway:
+  - [`arrow-body-style`](https://eslint.org/docs/rules/arrow-body-style)
+  - [`prefer-arrow-callback`](https://eslint.org/docs/rules/prefer-arrow-callback)
 
 ## 18.0.1
 
