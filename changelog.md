@@ -1,5 +1,11 @@
 # eslint-config-env changelog
 
+## Next
+
+### Patch
+
+- Updated dependencies.
+
 ## 18.0.1
 
 ### Patch
