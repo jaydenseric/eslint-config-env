@@ -185,11 +185,42 @@ const config = {
       'error',
       {
         captionRequired: true,
-
-        // To only check the caption, reject literally any example. Perhaps in
-        // the future checking examples will be doable:
-        // https://github.com/gajus/eslint-plugin-jsdoc/issues/331
-        rejectExampleCodeRegex: '[^]*',
+        exampleCodeRegex:
+          // JSDoc example content (following the caption) is assumed to be
+          // markdown. Here, the contents of fenced JS code blocks are selected
+          // to be linted with only the Prettier plugin.
+          '/^```(?:javascript|jsx?)\n([^]*?)```$/gmiu',
+        checkEslintrc: false,
+        // The default disabling of common rules that are problematic for JSDoc
+        // code examples is unnecessary because only Prettier is used.
+        noDefaultExampleRules: true,
+        baseConfig: {
+          extends: ['plugin:prettier/recommended'],
+          env: {
+            // Allow code examples to contain modern syntax and globals. Because
+            // only Prettier is used, there is no reason to set `node` or
+            // `browser`. At this point in the config there is no way to tell
+            // what environment the code example is for anyway.
+            es2021: true,
+          },
+          parserOptions: {
+            // While the JSDoc code example might be CJS and not ESM, there
+            // isn’t a way to figure that out without using a custom markdown
+            // code block fence label. A `module` source type allows both ESM
+            // and CJS code to parse, while a `script` source type would cause
+            // parse errors on syntax such as `import`. The technical
+            // incorrectness doesn’t matter because Prettier is the only ESLint
+            // plugin used and it doesn’t utilize the source type.
+            sourceType: 'module',
+            ecmaFeatures: {
+              // Allow code examples to contain JSX. Although harmless to allow
+              // JSX for all code examples, if there is a way it would be better
+              // to only enable JSX in markdown code blocks with the fence label
+              // `JSX` (case-insensitive).
+              jsx: true,
+            },
+          },
+        },
       },
     ],
     'jsdoc/check-param-names': 'error',

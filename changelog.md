@@ -13,6 +13,10 @@
   - [`jsdoc/require-property-description`](https://github.com/gajus/eslint-plugin-jsdoc#require-property-description)
   - [`jsdoc/require-property-name`](https://github.com/gajus/eslint-plugin-jsdoc#require-property-name)
   - [`jsdoc/require-property-type`](https://github.com/gajus/eslint-plugin-jsdoc#require-property-type)
+- Assume `@example` JSDoc tag content (following the caption) is markdown, and Prettier lint the contents of markdown code blocks fenced with these labels (case-insensitive):
+  - `JS`
+  - `JSX`
+  - `JavaScript`
 
 ### Patch
 
