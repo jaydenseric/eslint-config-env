@@ -20,6 +20,7 @@
 
 ### Patch
 
+- Updated the [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) peer dependency to `25 - 32`.
 - Updated dependencies.
 - Removed rules that conflict with [`eslint-plugin-prettier`](https://npm.im/eslint-plugin-prettier) (see [prettier/eslint-plugin-prettier#65](https://github.com/prettier/eslint-plugin-prettier/issues/65)) and are disabled via the `plugin:prettier/recommended` config anyway:
   - [`arrow-body-style`](https://eslint.org/docs/rules/arrow-body-style)
