@@ -135,7 +135,10 @@ const config = {
         : JSDOC_TAG_NAME_PREFERENCE,
     },
   },
-  env: { es6: true, node: true },
+  env: {
+    es2021: true,
+    node: true,
+  },
   plugins: ['jsdoc'],
   extends: [
     'eslint:recommended',
@@ -215,6 +218,10 @@ const config = {
 
   // These base options apply to all linted files, including .js and .jsx.
   parserOptions: {
+    // While setting `env.es2021` is supposed to default this to `12`, the
+    // `plugin:node/recommended` and `plugin:import/recommended` configs
+    // override it to a lower version. Hard-coding the version here overrides
+    // that again.
     ecmaVersion: 2021,
 
     // If a consumer’s package.json specifies a `type`, respect it, otherwise

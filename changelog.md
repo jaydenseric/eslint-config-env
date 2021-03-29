@@ -4,6 +4,7 @@
 
 ### Major
 
+- Configure the ESLint `env` to be `es2021`, instead of `es6`.
 - Support [`eslint-config-prettier`](https://npm.im/eslint-config-prettier) v8, fixing [#3](https://github.com/jaydenseric/eslint-config-env/issues/3).
 - Enabled [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) rules:
   - [`jsdoc/check-property-names`](https://github.com/gajus/eslint-plugin-jsdoc#check-property-names)
