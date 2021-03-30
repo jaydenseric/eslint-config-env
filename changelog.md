@@ -17,6 +17,9 @@
   - `JS`
   - `JSX`
   - `JavaScript`
+- Configured [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) preferred JSDoc types via `settings.jsdoc.preferredTypes`:
+  - Dots in `.<>` types aren’t preferred, e.g. `Array.<string>` now auto-fixes to `Array<string>`.
+  - `[]` types aren’t preferred, e.g. `string[]` now auto-fixes to `Array<string>`.
 
 ### Patch
 

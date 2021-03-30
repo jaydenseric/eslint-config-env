@@ -133,6 +133,10 @@ const config = {
       tagNamePreference: env.jsdocMd
         ? jsdocMdTagNamePreference()
         : JSDOC_TAG_NAME_PREFERENCE,
+      preferredTypes: {
+        '.<>': '<>',
+        '[]': 'Array<>',
+      },
     },
   },
   env: {
