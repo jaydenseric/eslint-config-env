@@ -14,9 +14,13 @@
   - [`jsdoc/require-property-name`](https://github.com/gajus/eslint-plugin-jsdoc#require-property-name)
   - [`jsdoc/require-property-type`](https://github.com/gajus/eslint-plugin-jsdoc#require-property-type)
 - Configured [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) to assume `@example` JSDoc tag content (following the caption) is markdown, and Prettier lint the contents of markdown code blocks fenced with these labels (case-insensitive):
+
   - `JS`
   - `JSX`
   - `JavaScript`
+
+  If your example JS code has deliberate parse errors (e.g. due to custom escapes for `*/` used within the code, see [gajus/eslint-plugin-jsdoc#710](https://github.com/gajus/eslint-plugin-jsdoc/issues/710)), use a `/* eslint-disable jsdoc/check-examples */` comment.
+
 - Configured [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) preferred JSDoc types via `settings.jsdoc.preferredTypes`:
   - Dots in `.<>` types aren’t preferred, e.g. `Array.<string>` now auto-fixes to `Array<string>`.
   - `[]` types aren’t preferred, e.g. `string[]` now auto-fixes to `Array<string>`.
