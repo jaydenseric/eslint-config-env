@@ -4,7 +4,7 @@
 
 ### Major
 
-- Configure the ESLint `env` to be `es2021`, instead of `es6`.
+- Configured the ESLint `env` to be `es2021`, instead of `es6`.
 - Support [`eslint-config-prettier`](https://npm.im/eslint-config-prettier) v8, fixing [#3](https://github.com/jaydenseric/eslint-config-env/issues/3).
 - Enabled [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) rules:
   - [`jsdoc/check-property-names`](https://github.com/gajus/eslint-plugin-jsdoc#check-property-names)
@@ -13,7 +13,7 @@
   - [`jsdoc/require-property-description`](https://github.com/gajus/eslint-plugin-jsdoc#require-property-description)
   - [`jsdoc/require-property-name`](https://github.com/gajus/eslint-plugin-jsdoc#require-property-name)
   - [`jsdoc/require-property-type`](https://github.com/gajus/eslint-plugin-jsdoc#require-property-type)
-- Assume `@example` JSDoc tag content (following the caption) is markdown, and Prettier lint the contents of markdown code blocks fenced with these labels (case-insensitive):
+- Configured [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) to assume `@example` JSDoc tag content (following the caption) is markdown, and Prettier lint the contents of markdown code blocks fenced with these labels (case-insensitive):
   - `JS`
   - `JSX`
   - `JavaScript`
