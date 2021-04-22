@@ -1,5 +1,11 @@
 # eslint-config-env changelog
 
+## Next
+
+### Patch
+
+- Updated dev dependencies.
+
 ## 19.0.0
 
 ### Major
