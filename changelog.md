@@ -5,6 +5,7 @@
 ### Patch
 
 - Updated dev dependencies.
+- Removed the [`semver`](https://npm.im/semver) dependency and some `package.json` `engines.node` field checks that are no longer necessary for the currently supported Node.js versions.
 
 ## 19.0.0
 

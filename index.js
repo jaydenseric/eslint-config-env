@@ -2,7 +2,25 @@
 
 const { path: projectRootPath } = require('app-root-path');
 const readPkgUp = require('read-pkg-up');
-const semver = require('semver');
+
+const {
+  packageJson: {
+    type,
+    browserslist,
+    peerDependencies = {},
+    dependencies = {},
+    devDependencies = {},
+  } = {},
+} = readPkgUp.sync({ cwd: projectRootPath });
+
+const env = {
+  browser: !!browserslist,
+  babel: !!devDependencies['@babel/core'] || !!dependencies.next,
+  prettier: !!devDependencies.prettier,
+  react: !!peerDependencies.react || !!dependencies.react,
+  next: !!dependencies.next,
+  jsdocMd: !!devDependencies['jsdoc-md'],
+};
 
 /**
  * Checks packages are dev dependencies.
@@ -15,48 +33,6 @@ function checkDevDependencies(packageNames) {
         `Install missing project dev dependency \`${packageName}\`.`
       );
 }
-
-/**
- * Determines if Node.js features available since a given version are supported
- * by the project.
- * @param {number} availableSinceVersion First Node.js version the features are available in.
- * @returns {boolean} Are the features supported.
- */
-const nodeFeaturesSinceVersionSupported = (availableSinceVersion) =>
-  !semver.intersects(engines.node, `<${availableSinceVersion}`);
-
-const {
-  packageJson: {
-    type,
-    engines = {},
-    browserslist,
-    peerDependencies = {},
-    dependencies = {},
-    devDependencies = {},
-  } = {},
-} = readPkgUp.sync({ cwd: projectRootPath });
-
-if (!('node' in engines))
-  throw new Error(
-    'Specify supported Node.js versions in the package.json field `engines.node`.'
-  );
-
-if (!semver.validRange(engines.node))
-  throw new Error(
-    'Invalid semver range in the package.json field `engines.node`.'
-  );
-
-const env = {
-  browser: !!browserslist,
-  babel: !!devDependencies['@babel/core'] || !!dependencies.next,
-  prettier: !!devDependencies.prettier,
-  react: !!peerDependencies.react || !!dependencies.react,
-  next: !!dependencies.next,
-  jsdocMd: !!devDependencies['jsdoc-md'],
-};
-
-// Note: Only external plugins and config referenced in the base config can be
-// package.json peerDependencies.
 
 checkDevDependencies([
   // Although the fact this config is being used implies ESLint is present, it
@@ -126,7 +102,9 @@ function jsdocMdTagNamePreference() {
   return tagNamePreference;
 }
 
-// Base config assumes a vanilla Node.js project.
+// Base config assumes a vanilla Node.js project. Note: Only external plugins
+// and config referenced in the base config can be package.json
+// peerDependencies.
 const config = {
   settings: {
     jsdoc: {
@@ -302,18 +280,16 @@ if (env.browser) {
   }
 }
 
-// It would be nice to also prefer modern ES syntax for browser projects, when
-// available in all browsers supported in the project’s browserslist config.
-
-if (env.babel || (!env.browser && nodeFeaturesSinceVersionSupported('6.4')))
+if (env.babel || !env.browser) {
+  // It would be nice to also prefer modern ES syntax for browser projects, when
+  // available in all browsers supported in the project’s browserslist config.
   config.rules['prefer-destructuring'] = 'error';
-
-if (env.babel || (!env.browser && nodeFeaturesSinceVersionSupported('4')))
   config.rules['object-shorthand'] = [
     'error',
     'always',
     { avoidExplicitReturnArrows: true },
   ];
+}
 
 if (env.babel) {
   checkDevDependencies(['@babel/eslint-parser']);

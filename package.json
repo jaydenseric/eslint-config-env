@@ -42,8 +42,7 @@
   },
   "dependencies": {
     "app-root-path": "^3.0.0",
-    "read-pkg-up": "^7.0.1",
-    "semver": "^7.3.5"
+    "read-pkg-up": "^7.0.1"
   },
   "devDependencies": {
     "eslint": "^7.24.0",
