@@ -1,5 +1,12 @@
 # eslint-config-env changelog
 
+## Next
+
+### Patch
+
+- Updated the [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) peer dependency to `25 - 33`.
+- Updated dev dependencies.
+
 ## 19.0.1
 
 ### Patch

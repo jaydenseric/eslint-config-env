@@ -37,7 +37,7 @@
   "peerDependencies": {
     "eslint": "^7.5.0",
     "eslint-plugin-import": "^2.21.0",
-    "eslint-plugin-jsdoc": "25 - 32",
+    "eslint-plugin-jsdoc": "25 - 33",
     "eslint-plugin-node": "9 - 11"
   },
   "dependencies": {
@@ -45,10 +45,10 @@
     "read-pkg-up": "^7.0.1"
   },
   "devDependencies": {
-    "eslint": "^7.24.0",
-    "eslint-config-prettier": "^8.2.0",
+    "eslint": "^7.25.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsdoc": "^32.3.0",
+    "eslint-plugin-jsdoc": "^33.0.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.4.0",
     "prettier": "^2.2.1"
