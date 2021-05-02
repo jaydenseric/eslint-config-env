@@ -6,6 +6,7 @@
 
 - Updated the [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) peer dependency to `25 - 33`.
 - Updated dev dependencies.
+- Updated GitHub Actions CI config to also test Node.js v16.
 
 ## 19.0.1
 
