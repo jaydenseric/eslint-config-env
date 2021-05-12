@@ -11,6 +11,7 @@
 ### Patch
 
 - Updated the GitHub Actions CI config to test Node.js versions v12, v14, v16.
+- Readme tweaks.
 
 ## 19.0.2
 

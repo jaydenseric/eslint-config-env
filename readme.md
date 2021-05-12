@@ -4,8 +4,8 @@
 
 [ESLint](https://eslint.org) config optimized for authoring packages that adapts to the project environment, supporting:
 
-- Node.js
-- Browser
+- [Node.js](https://nodejs.org)
+- Browsers
 - [Babel](https://babeljs.io)
 - [Prettier](https://prettier.io)
 - [React](https://reactjs.org)
@@ -14,7 +14,7 @@
 
 ## Install
 
-To install [`eslint-config-env`](https://npm.im/eslint-config-env) and it’s peer dependencies from [npm](https://npmjs.com) run:
+To install [`eslint-config-env`](https://npm.im/eslint-config-env) and it’s peer dependencies with [npm](https://npmjs.com/get-npm), run:
 
 ```sh
 npm install eslint-config-env eslint-plugin-node eslint-plugin-import eslint-plugin-jsdoc --save-dev
@@ -34,7 +34,7 @@ Also follow the setup instructions that are relevant to your project below…
 
 Every project **_must_** specify supported Node.js versions in the [`package.json` `engines.node` field](https://docs.npmjs.com/files/package.json#engines).
 
-### Browser
+### Browsers
 
 Also install [`eslint-plugin-compat`](https://npm.im/eslint-plugin-compat):
 
