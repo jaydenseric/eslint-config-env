@@ -32,11 +32,11 @@ Also follow the setup instructions that are relevant to your project below…
 
 ### Node.js
 
-Every project **_must_** specify supported Node.js versions in the [`package.json` `engines.node` field](https://docs.npmjs.com/files/package.json#engines).
+Every project **_must_** specify supported [Node.js](https://nodejs.org) versions in the [`package.json` `engines.node` field](https://docs.npmjs.com/files/package.json#engines).
 
 ### Browsers
 
-Also install [`eslint-plugin-compat`](https://npm.im/eslint-plugin-compat):
+If it’s not a [Babel](https://babeljs.io) project, also install [`eslint-plugin-compat`](https://npm.im/eslint-plugin-compat):
 
 ```sh
 npm install eslint-plugin-compat --save-dev
