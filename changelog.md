@@ -5,10 +5,11 @@
 ### Major
 
 - Updated Node.js support to `>= 12`.
+- Updated the [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) peer dependency to `^34.0.0`, via [#4](https://github.com/jaydenseric/eslint-config-env/pull/4).
+- Updated dev dependencies, some of which require newer Node.js versions than previously supported.
 
 ### Patch
 
-- Updated the [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) peer dependency to `25 - 34`, via [#4](https://github.com/jaydenseric/eslint-config-env/pull/4).
 - Updated the GitHub Actions CI config to test Node.js versions v12, v14, v16.
 
 ## 19.0.2
