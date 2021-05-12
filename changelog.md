@@ -1,5 +1,15 @@
 # eslint-config-env changelog
 
+## Next
+
+### Major
+
+- Updated Node.js support to `>= 12`.
+
+### Patch
+
+- Updated the GitHub Actions CI config to test Node.js versions v12, v14, v16.
+
 ## 19.0.2
 
 ### Patch
