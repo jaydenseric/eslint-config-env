@@ -4,7 +4,7 @@
 
 ### Patch
 
-- Updated the eslint-plugin-jsdoc peer dependency to 25 - 34.
+- Updated the [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) peer dependency to `25 - 34`, via [#4](https://github.com/jaydenseric/eslint-config-env/pull/4).
 
 ## 19.0.2
 
