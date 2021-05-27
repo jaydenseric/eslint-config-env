@@ -1,5 +1,11 @@
 # eslint-config-env changelog
 
+## Next
+
+### Patch
+
+- Amended the changelog entry for v20.0.0.
+
 ## 20.0.1
 
 ### Patch
@@ -19,6 +25,7 @@
 
 - Updated the GitHub Actions CI config to test Node.js versions v12, v14, v16.
 - Readme tweaks.
+- The file `changelog.md` is no longer published.
 
 ## 19.0.2
 
