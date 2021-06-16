@@ -72,6 +72,12 @@ npm install eslint-plugin-react eslint-plugin-react-hooks --save-dev
 
 Follow the [Babel setup instructions](#babel).
 
+Also install [`@next/eslint-plugin-next`](https://npm.im/@next/eslint-plugin-next):
+
+```sh
+npm install @next/eslint-plugin-next --save-dev
+```
+
 ### jsdoc-md
 
 A [`jsdoc-md`](https://npm.im/jsdoc-md) project does not require additional setup.

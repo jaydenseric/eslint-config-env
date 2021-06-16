@@ -331,6 +331,13 @@ if (env.prettier) {
 }
 
 if (env.next) {
+  checkDevDependencies(['@next/eslint-plugin-next']);
+  config.extends.push('plugin:@next/next/recommended');
+
+  // Don’t warn when vanilla `img` elements are used in JSX as they have many
+  // valid uses.
+  config.rules['@next/next/no-img-element'] = 'off';
+
   // Next.js projects allow ESM in non .mjs files.
   config.rules['node/no-extraneous-import'] = 'error';
   config.rules['node/no-missing-import'] = 'error';

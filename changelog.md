@@ -2,6 +2,11 @@
 
 ## Next
 
+### Major
+
+- Next.js projects must now have the [`@next/eslint-plugin-next`](https://npm.im/@next/eslint-plugin-next) dev dependency installed.
+- Enabled [`@next/eslint-plugin-next`](https://npm.im/@next/eslint-plugin-next) [`recommended`](https://nextjs.org/docs/basic-features/eslint#eslint-plugin) rules for Next.js projects, except for the [`@next/next/no-img-element`](https://nextjs.org/docs/messages/no-img-element) rule as there are many valid uses for the vanilla `img` element in JSX.
+
 ### Patch
 
 - Updated dev dependencies.
