@@ -1,5 +1,16 @@
 # eslint-config-env changelog
 
+## Next
+
+### Major
+
+- Updated Node.js support to `>= 12.20`.
+- Updated dev dependencies, some of which require newer Node.js versions than previously supported.
+
+### Patch
+
+- Updated the [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) peer dependency to `34 - 36`.
+
 ## 21.0.0
 
 ### Major
