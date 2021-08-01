@@ -1,6 +1,6 @@
 # eslint-config-env changelog
 
-## Next
+## 22.0.0
 
 ### Major
 
