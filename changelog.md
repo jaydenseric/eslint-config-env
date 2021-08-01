@@ -10,6 +10,7 @@
 ### Patch
 
 - Updated the [`eslint-plugin-jsdoc`](https://npm.im/eslint-plugin-jsdoc) peer dependency to `34 - 36`.
+- Added a link to ESLint configuration documentation in the readme.
 
 ## 21.0.0
 

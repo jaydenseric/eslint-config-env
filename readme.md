@@ -20,7 +20,7 @@ To install [`eslint-config-env`](https://npm.im/eslint-config-env) and it’s pe
 npm install eslint-config-env eslint-plugin-node eslint-plugin-import eslint-plugin-jsdoc --save-dev
 ```
 
-Configure ESLint in your project:
+[Configure ESLint](https://eslint.org/docs/user-guide/configuring/configuration-files#using-a-shareable-configuration-package) in your project:
 
 ```json
 {
