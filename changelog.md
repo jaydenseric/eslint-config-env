@@ -2,6 +2,10 @@
 
 ## Next
 
+### Major
+
+- Updated Node.js support to `^12.20.0 || ^14.13.1 || >= 16.0.0`.
+
 ### Patch
 
 - Disabled the [`react/prop-types`](https://github.com/yannickcr/eslint-plugin-react/blob/v7.26.1/docs/rules/prop-types.md) rule.
