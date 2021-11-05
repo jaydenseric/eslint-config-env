@@ -8,6 +8,7 @@
 
 ### Patch
 
+- Also run GitHub Actions CI with Node.js v17.
 - Disabled the [`react/prop-types`](https://github.com/yannickcr/eslint-plugin-react/blob/v7.26.1/docs/rules/prop-types.md) rule.
 
 ## 22.0.0
