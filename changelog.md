@@ -9,6 +9,7 @@
 ### Patch
 
 - Also run GitHub Actions CI with Node.js v17.
+- Disabled the [`jsdoc/check-examples`](https://github.com/gajus/eslint-plugin-jsdoc/tree/v37.0.3#eslint-plugin-jsdoc-rules-check-examples) rule as it doesn’t work yet in ESLint v8 (see [eslint/eslint#14745](https://github.com/eslint/eslint/issues/14745)).
 - Disabled the [`react/prop-types`](https://github.com/yannickcr/eslint-plugin-react/blob/v7.26.1/docs/rules/prop-types.md) rule.
 
 ## 22.0.0
