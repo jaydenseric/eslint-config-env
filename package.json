@@ -35,9 +35,9 @@
     "node": "^12.20.0 || ^14.13.1 || >= 16.0.0"
   },
   "peerDependencies": {
-    "eslint": "^7.5.0",
+    "eslint": "7.5 - 8",
     "eslint-plugin-import": "^2.21.0",
-    "eslint-plugin-jsdoc": "34 - 36",
+    "eslint-plugin-jsdoc": "34 - 37",
     "eslint-plugin-node": "9 - 11"
   },
   "dependencies": {
@@ -45,13 +45,13 @@
     "read-pkg-up": "^7.0.1"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
+    "eslint": "^8.1.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-jsdoc": "^36.0.6",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jsdoc": "^37.0.3",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "prettier": "^2.3.2"
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.4.1"
   },
   "scripts": {
     "test": "npm run test:eslint && npm run test:prettier",
