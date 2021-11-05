@@ -314,6 +314,7 @@ if (env.react) {
   // https://github.com/yannickcr/eslint-plugin-react/issues/1955#issuecomment-450771510
   config.settings.react = { version: 'detect' };
 
+  config.rules['react/prop-types'] = 'off';
   config.rules['react/jsx-boolean-value'] = 'error';
   config.rules['react/jsx-curly-brace-presence'] = 'error';
   config.rules['react/jsx-fragments'] = 'error';
