@@ -7,6 +7,7 @@
 - Updated dev dependencies.
 - Simplified package scripts.
 - Configured Prettier option `singleQuote` to the default, `false`.
+- Configured the [`jsdoc/require-description`](https://github.com/gajus/eslint-plugin-jsdoc/tree/v37.4.0#eslint-plugin-jsdoc-rules-require-description) rule option `checkConstructors` to `false`.
 
 ## 23.0.0
 

@@ -170,7 +170,7 @@ const config = {
     "jsdoc/empty-tags": "error",
     "jsdoc/implements-on-classes": "error",
     "jsdoc/newline-after-description": ["error", "never"],
-    "jsdoc/require-description": "error",
+    "jsdoc/require-description": ["error", { checkConstructors: false }],
     "jsdoc/require-jsdoc": "error",
     "jsdoc/require-param": "error",
     "jsdoc/require-param-description": "error",
