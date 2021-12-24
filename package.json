@@ -54,9 +54,9 @@
     "prettier": "^2.5.1"
   },
   "scripts": {
-    "test": "npm run test:eslint && npm run test:prettier",
-    "test:eslint": "eslint .",
-    "test:prettier": "prettier -c .",
+    "eslint": "eslint .",
+    "prettier": "prettier -c .",
+    "test": "npm run eslint && npm run prettier",
     "prepublishOnly": "npm test"
   }
 }

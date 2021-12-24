@@ -5,6 +5,7 @@
 ### Patch
 
 - Updated dev dependencies.
+- Simplified package scripts.
 
 ## 23.0.0
 
