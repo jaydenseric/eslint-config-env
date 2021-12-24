@@ -6,6 +6,7 @@
 
 - Updated dev dependencies.
 - Simplified package scripts.
+- Configured Prettier option `singleQuote` to the default, `false`.
 
 ## 23.0.0
 
