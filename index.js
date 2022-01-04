@@ -193,7 +193,7 @@ const config = {
     // `plugin:node/recommended` and `plugin:import/recommended` configs
     // override it to a lower version. Hard-coding the version here overrides
     // that again.
-    ecmaVersion: 2021,
+    ecmaVersion: "latest",
 
     // If a consumer’s package.json specifies a `type`, respect it, otherwise
     // try to suit the project environment. See:

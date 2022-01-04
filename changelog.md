@@ -5,6 +5,7 @@
 ### Patch
 
 - Updated dev dependencies.
+- Updated the ESLint `parserOptions.ecmaVersion` config from `2021` to `"latest"`.
 
 ## 23.0.1
 
