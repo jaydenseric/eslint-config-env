@@ -6,6 +6,7 @@
 
 - Updated dev dependencies.
 - Updated the ESLint `parserOptions.ecmaVersion` config from `2021` to `"latest"`.
+- Removed a comment in the `.editorconfig` file.
 
 ## 23.0.1
 
