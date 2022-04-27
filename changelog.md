@@ -1,5 +1,11 @@
 # eslint-config-env changelog
 
+## 24.0.0
+
+### Major
+
+- Dropped Node.js 12 to support [newer versions](https://github.com/gajus/eslint-plugin-jsdoc/releases/tag/v39.0.0) of [eslint-plugin-jsdoc](https://github.com/gajus/eslint-plugin-jsdoc).
+
 ## 23.0.2
 
 ### Patch
