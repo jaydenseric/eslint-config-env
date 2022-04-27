@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-env",
-  "version": "23.0.2",
+  "version": "24.0.0",
   "description": "ESLint config optimized for authoring packages that adapts to the project environment.",
   "license": "MIT",
   "author": {
@@ -32,12 +32,12 @@
     "index.js"
   ],
   "engines": {
-    "node": "^12.20.0 || ^14.13.1 || >= 16.0.0"
+    "node": "^14.13.1 || >= 16.0.0"
   },
   "peerDependencies": {
     "eslint": "7.5 - 8",
     "eslint-plugin-import": "^2.21.0",
-    "eslint-plugin-jsdoc": "34 - 37",
+    "eslint-plugin-jsdoc": "^39.2.9",
     "eslint-plugin-node": "9 - 11"
   },
   "dependencies": {
